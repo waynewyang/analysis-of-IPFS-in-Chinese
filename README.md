@@ -29,10 +29,17 @@
 
 ### 基础模块分析
 - [x] [multiformats](https://gitlab.com/waynewyang/ipfs/blob/master/doc/multiformat.md)
+	- [x] [mafmt](https://gitlab.com/waynewyang/ipfs/blob/master/multiaddrs/mafmt)
+	- [x] [addr-util](https://gitlab.com/waynewyang/ipfs/blob/master/multiaddrs/addr-util)
+	- [x] [maddr-filter](https://gitlab.com/waynewyang/ipfs/blob/master/multiaddrs/maddr-filter)
+	- [x] [multiaddr-filter](https://gitlab.com/waynewyang/ipfs/blob/master/multiaddrs/multiaddr-filter)
 - [x] [cid](https://gitlab.com/waynewyang/ipfs/blob/master/doc/cid.md)
 - [ ] [datastores](https://gitlab.com/waynewyang/ipfs/blob/master/doc/datastores.md)
 	- [ ] leveldb
 	- [ ] go-ds-flatfs
+- [ ] [protobuf](https://gitlab.com/waynewyang/ipfs/blob/master/protobuf)
+	- [ ] io(gogo-protobuf/io)
+- [ ] [semver](https://gitlab.com/waynewyang/ipfs/blob/master/semver)
 
 ### IPFS主流程源码概要分析
 - [ ] ipfs init
@@ -43,7 +50,8 @@
 
 ### 协议层源码主逻辑分析
 - [ ] network
-	- [ ] Relay
+	- [x] [pnet](https://gitlab.com/waynewyang/ipfs/blob/master/go-libp2p-interface-pnet)
+	- [ ] relay
 	- [ ] 穿透
 - [ ] routing
 	- [x] DHT寻址原理
