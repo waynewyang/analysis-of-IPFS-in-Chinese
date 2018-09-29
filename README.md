@@ -1,14 +1,14 @@
 ## IPFS
 
 ### GO语言基础
-- [x] context用法
-- [x] 空struct用法
-- [x] interface理解
+- [x] [context用法](https://gitlab.com/waynewyang/ipfs/tree/master/go-basic/context)
+- [x] [空struct用法](https://gitlab.com/waynewyang/ipfs/tree/master/go-basic/nullstruct)
+- [x] [interface理解](https://gitlab.com/waynewyang/ipfs/tree/master/go-basic/interface)
 
-### IPFS协议总览
+### IPFS协议总览及计划
 - [x] [协议总览](https://github.com/ipfs/specs/tree/master/architecture)
 - [x] [merkledag瘦腰图](https://github.com/ipfs/specs/blob/master/merkledag/mdag.waist.png) 与 [IP瘦腰图](https://github.com/ipfs/specs/blob/master/merkledag/ip.waist.png)
-- [ ] 详细计划
+- [ ] 总结文档
 
 ### IPFS API熟悉
 - [x] IPFS API
