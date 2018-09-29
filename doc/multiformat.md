@@ -9,43 +9,44 @@
 
 - **参考网址**
 
->[官网](https://multiformats.io/)
+>[官网](https://multiformats.io/)  
+
 >[github](https://github.com/multiformats)
 
-multiformat类型| 解释 | code |举例
-- |- |- |- 
-multibase |编解码| [multibase.csv](https://github.com/multiformats/multibase/blob/master/multibase.csv )|在CID v1中，multibase是最外层的编码，默认为z，base58btc 
-multicodec | 数据格式|[multicodec.csv](https://github.com/multiformats/multicodec/blob/master/table.csv)  |在CID v1中，multicodec默认为0x55，raw类型
-multihash | 哈希方法| [multihash.csv](https://github.com/multiformats/multihash/blob/master/hashtable.csv) |cid中默认的哈希方法，代码0x12，sha2-256
-multiaddr |将表达网络地址的域名、ip、端口、协议编号等全部统一格式、路径（比如http/s）| 见下面表格|ipfs 网络使用的均为multiaddr
-multiaddr-dns |解析 /dns4, /dns6, and /dnsaddr multiaddrs. |  NA|见下表
-multiaddr-net |在标准net库基础上基于multiaddr封装一层接口 | NA |
-multistream |一个conn对应一个stream，在连接之上封装 |  string类型|[使用示例](https://gitlab.com/waynewyang/ipfs/tree/master/multistream)
-~~multigram~~|||
+|multiformat类型| 解释 | code |举例|
+|:-------:|:-------:|:-------:|:-------:|
+|multibase |编解码| [multibase.csv](https://github.com/multiformats/multibase/blob/master/multibase.csv )|在CID v1中，multibase是最外层的编码，默认为z，base58btc |
+|multicodec | 数据格式|[multicodec.csv](https://github.com/multiformats/multicodec/blob/master/table.csv)  |在CID v1中，multicodec默认为0x55，raw类型|
+|multihash | 哈希方法| [multihash.csv](https://github.com/multiformats/multihash/blob/master/hashtable.csv) |cid中默认的哈希方法，代码0x12，sha2-256|
+|multiaddr |将表达网络地址的域名、ip、端口、协议编号等全部统一格式、路径（比如http/s）| 见下面表格|ipfs 网络使用的均为multiaddr|
+|multiaddr-dns |解析 /dns4, /dns6, and /dnsaddr multiaddrs. |  NA|见下表|
+|multiaddr-net |在标准net库基础上基于multiaddr封装一层接口 | NA ||
+|multistream |一个conn对应一个stream，在连接之上封装 |  string类型|[使用示例](https://gitlab.com/waynewyang/ipfs/tree/master/multistream)|
+|~~multigram~~||||
 
 ***
 ### multiaddr Code表
-multiaddr类型 | code
-- |
-P_IP4|0x0004
-P_TCP|0x0006
-P_UDP|0x0111
-P_DCCP|0x0021
-P_IP6|0x0029
-P_IP6ZONE|0x002A
-P_QUIC|0x01CC
-P_SCTP |0x0084
-P_UDT| 0x012D
-P_UTP |0x012E
-P_UNIX |0x0190
-P_P2P|0x01A5
-P_IPFS|0x01A5
-P_HTTP|0x01E0
-P_HTTPS|0x01BB
-P_ONION|0x01BC
-dns4|54
-dns6|55
-dnsaddr|56
+|multiaddr类型 | code|
+|:------:|:------:|
+|P_IP4|0x0004|
+|P_TCP|0x0006|
+|P_UDP|0x0111|
+|P_DCCP|0x0021|
+|P_IP6|0x0029|
+|P_IP6ZONE|0x002A|
+|P_QUIC|0x01CC|
+|P_SCTP |0x0084|
+|P_UDT| 0x012D|
+|P_UTP |0x012E|
+|P_UNIX |0x0190|
+|P_P2P|0x01A5|
+|P_IPFS|0x01A5|
+|P_HTTP|0x01E0|
+|P_HTTPS|0x01BB|
+|P_ONION|0x01BC|
+|dns4|54|
+|dns6|55|
+|dnsaddr|56|
 
 ### multiaddr-dns示例
 ```
