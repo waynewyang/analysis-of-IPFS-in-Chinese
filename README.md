@@ -12,7 +12,14 @@
 	- [x] [mornmist team](https://github.com/mornmist/Newcomer-Guide)
 	- [x] [mornmist ipfs](https://github.com/mornmist/IPFS-For-Chinese)
 ### IPFS API熟悉
-- [x] IPFS API
+- [x] [参考](https://ipfs.docs.apiary.io)
+- [x] API笔记
+	- [x] basic
+	- [x] data structure
+	- [x] advance
+	- [x] network
+	- [x] tool
+	- [x] others 
 
 ### 基础模块分析
 - [x] [multiformats](https://gitlab.com/waynewyang/ipfs/blob/master/doc/multiformat.md)
