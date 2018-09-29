@@ -14,12 +14,12 @@
 ### IPFS API熟悉
 - [x] [参考](https://ipfs.docs.apiary.io)
 - [x] API笔记
-	- [x] basic
-	- [x] data structure
-	- [x] advance
-	- [x] network
-	- [x] tool
-	- [x] others 
+	- [x] [basic](https://gitlab.com/waynewyang/ipfs/blob/master/doc/api/basic.md)
+	- [x] [data structure](https://gitlab.com/waynewyang/ipfs/blob/master/doc/api/datastructure.md)
+	- [x] [advance](https://gitlab.com/waynewyang/ipfs/blob/master/doc/api/adv.md)
+	- [x] [network](https://gitlab.com/waynewyang/ipfs/blob/master/doc/api/net.md)
+	- [x] [tool](https://gitlab.com/waynewyang/ipfs/blob/master/doc/api/tool.md)
+	- [x] [others](https://gitlab.com/waynewyang/ipfs/blob/master/doc/api/others.md) 
 
 ### 基础模块分析
 - [x] [multiformats](https://gitlab.com/waynewyang/ipfs/blob/master/doc/multiformat.md)
