@@ -24,7 +24,7 @@
 
 ### libp2p接口使用
 - [ ] 转发使用
-	- [x] 命令
+	- [x] [命令](https://gitlab.com/waynewyang/ipfs/blob/master/doc/network.md)
 	- [ ] 编码
 
 ### 基础模块分析
