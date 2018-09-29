@@ -1,12 +1,12 @@
 ## TOOL COMMANDS
 
 ### config        Manage configuration
-ipfs config
-ipfs config edit
-ipfs config profile
-ipfs config profile apply
-ipfs config replace
-ipfs config show
+- ipfs config
+- ipfs config edit
+- ipfs config profile
+- ipfs config profile apply
+- ipfs config replace
+- ipfs config show
 
 ### version       Show ipfs version information
 
@@ -15,7 +15,8 @@ ipfs config show
 ### commands      List all available commands
 
 ### log
-ipfs log
-ipfs log level
-ipfs log ls
-***ipfs log tail    //用于调试查看有用***
+- ipfs log
+- ipfs log level
+- ipfs log ls
+- ***ipfs log tail***
+>调试有用

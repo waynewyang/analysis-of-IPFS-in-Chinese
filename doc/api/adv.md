@@ -75,19 +75,19 @@
 ### p2p? 
 > Libp2p stream mounting
 
-ipfs p2p listener
-ipfs p2p listener close
-ipfs p2p listener ls
-ipfs p2p listener open
-ipfs p2p stream
-ipfs p2p stream close
-ipfs p2p stream dial
-ipfs p2p stream ls
+- ipfs p2p listener
+- ipfs p2p listener close
+- ipfs p2p listener ls
+- ipfs p2p listener open
+- ipfs p2p stream
+- ipfs p2p stream close
+- ipfs p2p stream dial
+- ipfs p2p stream ls
 
 ### filestore     
 > Manage the filestore (experimental)
 
-ipfs filestore
-ipfs filestore dups
-ipfs filestore ls
-ipfs filestore verify
+- ipfs filestore
+- ipfs filestore dups
+- ipfs filestore ls
+- ipfs filestore verify
