@@ -5,11 +5,12 @@
 - [x] [空struct用法](https://gitlab.com/waynewyang/ipfs/tree/master/go-basic/nullstruct)
 - [x] [interface理解](https://gitlab.com/waynewyang/ipfs/tree/master/go-basic/interface)
 
-### IPFS协议总览及计划
+### IPFS协议总览
 - [x] [协议总览](https://github.com/ipfs/specs/tree/master/architecture)
 - [x] [merkledag瘦腰图](https://github.com/ipfs/specs/blob/master/merkledag/mdag.waist.png) 与 [IP瘦腰图](https://github.com/ipfs/specs/blob/master/merkledag/ip.waist.png)
-- [ ] 总结文档
-
+- [x] [国内研究参考]
+	- [x] [mornmist team](https://github.com/mornmist/Newcomer-Guide)
+	- [x] [mornmist ipfs](https://github.com/mornmist/IPFS-For-Chinese)
 ### IPFS API熟悉
 - [x] IPFS API
 
@@ -20,11 +21,11 @@
 	- [ ] leveldb
 	- [ ] go-ds-flatfs
 
-### IPFS主要流程分析
+### IPFS主流程源码概要分析
 - [ ] ipfs init
 - [ ] ipfs daemon
-- [ ] ipfs daemon
 - [ ] ipfs add
+- [ ] ipfs get
 - [ ] cancel
 
 ### 协议层源码主逻辑分析
@@ -34,7 +35,6 @@
 - [ ] routing
 	- [x] DHT寻址原理
 	- [x] 源码中修改K桶 a并发与k值提高效率
-	- [ ] 细节分析
 - [ ] bitswap
 - [ ] IPLD
 - [ ] IPNS
@@ -43,7 +43,6 @@
 - [ ] 转发使用
 	- [x] 命令
 	- [ ] 编码
-- [ ] 待规划
 
 ### 基于IPFS&libP2P协议完善度
 - [ ] 指定单目录存储，FILECOIN提前考虑
