@@ -11,6 +11,7 @@
 - [x] [国内研究参考]
 	- [x] [mornmist team](https://github.com/mornmist/Newcomer-Guide)
 	- [x] [mornmist ipfs](https://github.com/mornmist/IPFS-For-Chinese)
+
 ### IPFS API熟悉
 - [x] [参考](https://ipfs.docs.apiary.io)
 - [x] API笔记
@@ -20,6 +21,11 @@
 	- [x] [network](https://gitlab.com/waynewyang/ipfs/blob/master/doc/api/net.md)
 	- [x] [tool](https://gitlab.com/waynewyang/ipfs/blob/master/doc/api/tool.md)
 	- [x] [others](https://gitlab.com/waynewyang/ipfs/blob/master/doc/api/others.md) 
+
+### libp2p接口使用
+- [ ] 转发使用
+	- [x] 命令
+	- [ ] 编码
 
 ### 基础模块分析
 - [x] [multiformats](https://gitlab.com/waynewyang/ipfs/blob/master/doc/multiformat.md)
@@ -46,14 +52,9 @@
 - [ ] IPLD
 - [ ] IPNS
 
-### libp2p使用
-- [ ] 转发使用
-	- [x] 命令
-	- [ ] 编码
-
-### 基于IPFS&libP2P协议完善度
-- [ ] 指定单目录存储，FILECOIN提前考虑
-- [ ] libP2P穿透差
+### IPFS&libP2P协议对于我们来说存在的主要问题
+- 只能指定单目录存储，如果FILECOIN不做处理，硬盘的换盘会比较麻烦
+- libP2P穿透差
 
 ### 基于IPFS应用规划
 - [ ] 先河网盘
