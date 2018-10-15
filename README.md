@@ -58,8 +58,8 @@
 	- [x] 源码中修改K桶 a并发与k值提高效率
 - [x] bitswap
 	- [x] [总览](https://github.com/ipfs/specs/tree/master/bitswap)
-	- [x] [笔记](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/bitswap/bitswap)
-	- [x] [接口](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/bitswap/exchange)
+	- [x] [笔记](https://gitlab.com/waynewyang/ipfs/tree/master/bitswap/bitswap)
+	- [x] [接口](https://gitlab.com/waynewyang/ipfs/tree/master/bitswap/exchange)
 	- [ ] [细节实现] 
 - [x] IPLD
 	- [x] [block](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/block)
