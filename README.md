@@ -57,7 +57,12 @@
 	- [x] DHT寻址原理
 	- [x] 源码中修改K桶 a并发与k值提高效率
 - [ ] bitswap
-- [ ] IPLD
+- [x] IPLD
+	- [x] [block](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/block)
+	- [x] [ipld-format](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/ipld-format)
+	- [x] [ipld-cbor](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/ipld-cbor)
+	- [x] [go-merkledag](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/go-merkledag)
+	- [x] [dag-link数目大小限制](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/dag-link数目大小限制)
 - [ ] IPNS
 
 ### IPFS&libP2P协议对于我们来说存在的主要问题

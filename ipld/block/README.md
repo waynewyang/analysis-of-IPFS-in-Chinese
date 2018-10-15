@@ -3,7 +3,7 @@
 - 由cid和data组成
 - 是IPLD的基本组成单元
 
-###　数据结构
+### 数据结构
 
 ```
 type BasicBlock struct {
