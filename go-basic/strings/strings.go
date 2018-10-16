@@ -25,4 +25,7 @@ func main() {
 	}
 	z := string(j)
 	fmt.Println(z)
+
+	aaa := strings.SplitN("adf/ads/fs/a/f", "/", 3)
+	fmt.Println(aaa[0])
 }

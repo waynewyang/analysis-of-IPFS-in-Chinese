@@ -67,7 +67,16 @@
 	- [x] [ipld-cbor](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/ipld-cbor)
 	- [x] [go-merkledag](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/go-merkledag)
 	- [x] [dag-link数目大小限制](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/dag-link数目大小限制)
-- [ ] IPNS
+- [x] IPNS
+	- [x] [参考其他解释](https://www.jianshu.com/p/04d3e3cc9f1c)
+	- [x] [笔记](https://gitlab.com/waynewyang/ipfs/tree/master/ipns/go-ipns)
+	- [x] [go-ipns](https://gitlab.com/waynewyang/ipfs/tree/master/ipns/go-ipns)
+	- [x] [go-ipfs-namesys](https://gitlab.com/waynewyang/ipfs/tree/master/ipns/go-ipfs-namesys)
+		- [x] [dns](https://gitlab.com/waynewyang/ipfs/tree/master/ipns/go-ipfs-namesys/dns) 
+		- [ ] [publish等其他细节代码分析]
+
+### IPFS Cluster
+- [ ] 使用
 
 ### IPFS&libP2P协议对于我们来说存在的主要问题
 - 只能指定单目录存储，如果FILECOIN不做处理，硬盘的换盘会比较麻烦
