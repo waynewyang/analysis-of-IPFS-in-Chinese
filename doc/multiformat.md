@@ -21,7 +21,7 @@
 |multiaddr |将表达网络地址的域名、ip、端口、协议编号等全部统一格式、路径（比如http/s）| 见下面表格|ipfs 网络使用的均为multiaddr|
 |multiaddr-dns |解析 /dns4, /dns6, and /dnsaddr multiaddrs. |  NA|见下表|
 |multiaddr-net |在标准net库基础上基于multiaddr封装一层接口 | NA ||
-|multistream |一个conn对应一个stream，在连接之上封装 |  string类型|[使用示例](https://gitlab.com/waynewyang/ipfs/tree/master/multistream)|
+|multistream |一个conn对应一个stream，在连接之上封装 |  string类型|[使用示例](/../multistream)|
 |~~multigram~~||||
 
 ***

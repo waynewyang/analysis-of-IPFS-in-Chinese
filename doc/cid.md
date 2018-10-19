@@ -16,4 +16,4 @@
 >格式:`<multibase-prefix><cid-version><multicodec-content-type><multihash-content-address>`
 
 ## 解析示例
-- [解析成人类可识别的cid示例](https://gitlab.com/waynewyang/ipfs/tree/master/humancid)
+- [解析成人类可识别的cid示例](/../humancid)
