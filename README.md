@@ -88,10 +88,9 @@
 		- [ ] [CAR](https://github.com/ipld/specs/blob/master/CAR.md)
 - [x] namesys
 	- [x] [参考其他解释](https://www.jianshu.com/p/04d3e3cc9f1c)
-	- [x] [笔记](https://gitlab.com/waynewyang/ipfs/tree/master/ipns/go-ipns)
-	- [x] [go-ipns](https://gitlab.com/waynewyang/ipfs/tree/master/ipns/go-ipns)
 	- [x] [go-ipfs-namesys](https://gitlab.com/waynewyang/ipfs/tree/master/ipns/go-ipfs-namesys)
 		- [x] [dns](https://gitlab.com/waynewyang/ipfs/tree/master/ipns/go-ipfs-namesys/dns) 
+		- [x] [go-ipns](https://gitlab.com/waynewyang/ipfs/tree/master/ipns/go-ipns)
 		- [ ] [publish等其他细节代码分析]
 
 ### IPFS应用层及数据结构

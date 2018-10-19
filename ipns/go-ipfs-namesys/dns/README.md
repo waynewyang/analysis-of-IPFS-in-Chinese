@@ -1,8 +1,49 @@
 # DNS
 
+## 目录
+- [基础知识](#基础知识)
+- [目标](#目标)
+- [代码分析](#代码分析)
+- [操作示例](#操作示例)
+
+## 基础知识
+- 常用域名记录解释：A记录、MX记录、CNAME记录、TXT记录、AAAA记录、NS记录
+- A记录
+	A记录是用来创建到IPV4地址的记录。
+	在命令行下可以通过nslookup -qt=a www.ezloo.com 来查看A记录。
+
+- AAAA记录
+	AAAA记录是一个指向IPv6地址的记录。
+
+- MX记录
+	在命令行下可以通过 nslookup -qt=mx ezloo.com 来查看MX记录。
+	mx 记录的权重对 Mail 服务是很重要的，当发送邮件时，Mail 服务器先对域名进行解析，查找 mx 记录。先找权重数最小的服务器（比如说是 10），如果能连通，那么就将服务器发送过去；如果无法连通 mx 记录为 10 的服务器，那么才将邮件发送到权重为 20 的 mail 服务器上。
+
+- CNAME记录
+	CNAME记录也成别名记录，它允许你将多个记录映射到同一台计算机上。比如你建了如下几条记录：
+	a1 CNAME a.ezloo.com 
+	a2 CNAME a.ezloo.com 
+	a3 CNAME a.ezloo.com 
+	a A 111.222.111.222
+	我们访问a1（a2，a3）.ezloo.com的时候，域名解析服务器会返回一个CNAME记录，并且指向a.ezloo.com，然后我们的本地电脑会再发送一个请求，请求a.ezloo.com的解析，返回IP地址。
+	当我们要指向很多的域名到一台电脑上的时候，用CNAME比较方便，就如上面的例子，我们如果服务器更换IP了，我们只要更换a.ezloo.com的A记录即可。
+	在命令行下可以使用nslookup -qt=cname a.ezloo.com来查看CNAME记录。
+
+- TXT记录
+	TXT记录一般是为某条记录设置说明，比如你新建了一条a.ezloo.com的TXT记录，TXT记录内容"this is a test TXT record."，然后你用 nslookup -qt=txt a.ezloo.com ，你就能看到"this is a test TXT record"的字样。
+	在命令行下可以使用nslookup -qt=txt a.ezloo.com来查看TXT记录。
+
+- NS记录
+NS记录是域名服务器记录，用来指定域名由哪台服务器来进行解析。可以使用nslookup -qt=ns ezloo.com来查看。
+
+- [回到目录](#目录)
+
 ## 目标
-- 域名解析为ipfs地址（dns服务器，未ready？）
-    解析对象及结果如下所示
+- 基本原理
+	利用TXT记录，将通用人类可识别域名，解析未IPFS or IPNS地址
+	添加TXT记录的时候主机记录为   _dnslink.你的域名 或者你的域名
+	
+- 域名解析为ipfs地址，示例
 ```
 			"ipfs.example.com": []string{
 				"dnslink=/ipfs/QmY3hE8xgFCjGcz6PHgnvJz5HZi1BaKRfPkn1ghZUcYMjD",
@@ -18,6 +59,8 @@
 			},
 ```
 
+- [回到目录](#目录)
+
 ## 代码分析
 - base.go
 ```
@@ -27,7 +70,7 @@ type resolver interface {
 	resolveOnce(ctx context.Context, name string, options *opts.ResolveOpts) (value path.Path, ttl time.Duration, err error)
 }
 
-// 解析ipns的上层方法,name 表示的是http域名
+// 解析ipns的上层方法,name 表示的是通用域名
 // resolve is a helper for implementing Resolver.ResolveN using resolveOnce.
 func resolve(ctx context.Context, r resolver, name string, options *opts.ResolveOpts, prefixes ...string) (path.Path, error) 
 ```
@@ -51,7 +94,7 @@ type LookupTXTFunc func(name string) (txt []string, err error)
 
 // DNSResolver implements a Resolver on DNS domains
 type DNSResolver struct {
-	// http的域名解析,返回格式应该为ipfs(ipns)或者dnslink=/ipfs(ipns)
+	// http的TXT域名解析,返回格式应该为ipfs(ipns)或者dnslink=/ipfs(ipns)
 	lookupTXT LookupTXTFunc
 	// TODO: maybe some sort of caching?
 	// cache would need a timeout
@@ -149,7 +192,7 @@ func parseEntry(txt string) (path.Path, error) {
 		return p, nil
 	}
 
-	//如果是dnslink继续解析
+	//如果是dnslink（表示还没有解析完成，需要继续解析）
 	return tryParseDnsLink(txt)
 }
 
@@ -162,3 +205,11 @@ func tryParseDnsLink(txt string) (path.Path, error) {
 	return "", errors.New("not a valid dnslink entry")
 }
 ```
+
+- [回到目录](#目录)
+
+
+## 操作示例
+
+- 待添加
+- [回到目录](#目录)
