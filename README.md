@@ -15,10 +15,9 @@
 	- ![](https://img.shields.io/badge/status-stable-brightgreen.svg?style=flat-square) - 规范稳定，本质不变，可能做小的改善。
 	- ![](https://img.shields.io/badge/status-permanent-blue.svg?style=flat-square) - 完全稳定，永久不变。
 - [x] [协议总览](https://github.com/ipfs/specs/tree/master/architecture)
+![](/doc/image/mdag.waist.png) 
 
-![mdag.waist](https://github.com/ipfs/specs/blob/master/merkledag/mdag.waist.png) 
-
-![ip.waist](https://github.com/ipfs/specs/blob/master/merkledag/ip.waist.png)
+![](/doc/image/ip.waist.png)
 
 - [x] [国内研究参考]
 	- [x] [mornmist team](https://github.com/mornmist/Newcomer-Guide)
