@@ -1,4 +1,8 @@
 ## ADVANCED COMMANDS
+### 未分析
+- [ ] ipfs name pubsub
+- [ ] ipfs p2p
+- [ ] filestore
 
 ### daemon        
 > Start a long-running daemon process
@@ -69,7 +73,7 @@
 
 - ipfs stats
 - ipfs stats bitswap
-- ipfs stats bw
+- ipfs stats bw：带宽状态
 - ipfs stats repo
 
 ### p2p? 

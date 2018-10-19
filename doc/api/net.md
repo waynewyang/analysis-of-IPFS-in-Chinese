@@ -1,5 +1,4 @@
 ## NETWORK COMMANDS
-
 ### id            Show info about IPFS peers
 
 
@@ -50,7 +49,7 @@
 
 ### ping          Measure the latency of a connection
 
-### diag?          Print diagnostics
+### diag          Print diagnostics打印诊断信息
 - ipfs diag cmds
 - ipfs diag cmds clear
 - ipfs diag cmds set-time

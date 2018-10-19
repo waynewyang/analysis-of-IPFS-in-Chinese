@@ -1,5 +1,9 @@
 ## DATA STRUCTURE COMMANDS
-
+### 总述
+- block 块包含cid与data
+- object ：包含 block及links，是dag解码后的原始数据
+- dag ： object序列化之后的数据
+- files ： 类unix文件系统操作
 ### block         
 >Interact with raw blocks in the datastore
 >操作raw blocks
@@ -47,9 +51,17 @@ wayne@wayne:~$ ipfs object get QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n
 - ipfs object stat 
 >读取名称为`<key>`的DAG节点旳统计信息
 
+### dag           
+>Interact with IPLD documents (experimental)
+
+- ipfs dag get  
+>获取json格式的dag，与ipfs ls区别，更低层次，ipfs ls是其一个特例
+
+- ipfs dag put
+- ipfs dag resolve
+
 ### files         
 >Interact with objects as if they were a unix filesystem
->IPFS内存文件系统操作集
 - ipfs file ls
 - ipfs files chcid
 - ipfs files cp
@@ -63,12 +75,3 @@ wayne@wayne:~$ ipfs object get QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n
 - ipfs files write
 
 ![](/doc/image/ipfs_files.png)
-
-### dag           
->Interact with IPLD documents (experimental)
-
-- ipfs dag get  
->获取json格式的dag，与ipfs ls区别，更低层次，ipfs ls是其一个特例
-
-- ipfs dag put
-- ipfs dag resolve

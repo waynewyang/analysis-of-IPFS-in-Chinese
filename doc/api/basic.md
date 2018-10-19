@@ -17,4 +17,5 @@
 ### refs <ref>    
 >List hashes of links from an object
 
-- ipfs refs local?
+- ipfs refs local 
+>列出本地所有的DAG

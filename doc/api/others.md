@@ -1,7 +1,7 @@
 ## others
 ### ipfs shutdown
 
-###ipfs tar
+### ipfs tar
 - ipfs tar add
 - ipfs tar cat
 

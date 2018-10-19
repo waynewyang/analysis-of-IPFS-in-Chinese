@@ -32,10 +32,10 @@
 - [x] API笔记
 	- [x] [basic](/doc/api/basic.md)
 	- [x] [data structure](/doc/api/datastructure.md)
-	- [x] [advance](/doc/api/adv.md)
+	- [ ] [advance](/doc/api/adv.md)
 	- [x] [network](/doc/api/net.md)
 	- [x] [tool](/doc/api/tool.md)
-	- [x] [others](/doc/api/others.md) 
+	- [ ] [others](/doc/api/others.md) 
 
 ### libp2p接口使用
 - [ ] 转发使用
@@ -55,6 +55,7 @@
 	- [ ] [datastores](/doc/datastores.md)
   		- [ ] leveldb
 		- [ ] go-ds-flatfs
+		- [ ] filestore
 - [ ] [protobuf](/protobuf)
   - [ ] io(gogo-protobuf/io)
 - [ ] [semver](/semver)
@@ -109,16 +110,20 @@
 	- [ ] 源码分析
 
 ### IPFS Cluster
-- [ ] [参考](https://github.com/ipfs/ipfs-cluster)
-- [ ] 使用
+- [x] 参考
+	- [x] [源码](https://github.com/ipfs/ipfs-cluster)
+	- [x] [文档](https://cluster.ipfs.io/documentation/)
+- [x] [笔记](/ipfs-cluster)
+	- [x] [使用示例](/ipfs-cluster/example)
+	- [ ] 源码分析
 
 ### IPFS&libP2P协议对于我们来说存在的主要问题
 - 只能指定单目录存储，如果FILECOIN不做处理，硬盘的换盘会比较麻烦
 - libP2P穿透差
 
 ### 基于IPFS应用规划
-- [ ] 先河网盘
+- [ ] 先河IPFS网盘
+- [ ] 同步盘
 - [ ] 共享圈
 - [ ] 分布式鉴权云存储
 - [ ] 分布式聊天
-- [ ] VIPFS
