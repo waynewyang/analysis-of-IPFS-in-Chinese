@@ -75,18 +75,20 @@
 	- [x] 源码中修改K桶 a并发与k值提高效率
 - [x] block exchange
 	- [x] [总览](https://github.com/ipfs/specs/tree/master/bitswap)
+	- [x] [block](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/block)
 	- [x] [笔记](https://gitlab.com/waynewyang/ipfs/tree/master/bitswap/bitswap)
 	- [x] [接口](https://gitlab.com/waynewyang/ipfs/tree/master/bitswap/exchange)
 	- [ ] [细节实现] 
 - [x] merkledag
-	- [x] [block](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/block)
+	- [x] DAG数据结构
+		cid -> block -> node ->dag
 	- [x] [ipld-format](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/ipld-format)
 	- [x] [ipld-cbor](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/ipld-cbor)
 	- [x] [go-merkledag](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/go-merkledag)
 	- [x] [dag-link数目大小限制](https://gitlab.com/waynewyang/ipfs/tree/master/ipld/dag-link数目大小限制)
 	- [ ] 规范设计中的项目概览
 		- [ ] [CAR](https://github.com/ipld/specs/blob/master/CAR.md)
-- [x] namesys
+- [x] [namesys](https://gitlab.com/waynewyang/ipfs/tree/master/ipns)
 	- [x] [参考其他解释](https://www.jianshu.com/p/04d3e3cc9f1c)
 	- [x] [go-ipfs-namesys](https://gitlab.com/waynewyang/ipfs/tree/master/ipns/go-ipfs-namesys)
 		- [x] [dns](https://gitlab.com/waynewyang/ipfs/tree/master/ipns/go-ipfs-namesys/dns) 
@@ -94,12 +96,13 @@
 		- [ ] [publish等其他细节代码分析]
 
 ### IPFS应用层及数据结构
-- [x] [unixfs](https://gitlab.com/waynewyang/ipfs/tree/master/unixfs)
-  - [x] 挂载操作
-    - [x] 可使用mount操作将ipfs文件系统挂载在unix文件系统之上
-    - [x] 在unix系统中，可提供给用户传统文件的操作方式 
-    - [x] [file(mfs)参考](https://github.com/ipfs/interface-ipfs-core/blob/master/SPEC/FILES.md#mutable-file-system)
-    - [x] [mfs使用](https://gitlab.com/waynewyang/ipfs/blob/master/doc/image/ipfs_files.png) 
+- [x] [unixfs](/unixfs)
+  - [x] mount
+		- 可使用mount操作将ipfs文件系统以只读的方式挂载在unix文件系统之上进行操作
+		- [mount 示例](/unixfs/mount.md)
+  - [x] [files(mfs)参考](https://github.com/ipfs/interface-ipfs-core/blob/master/SPEC/FILES.md#mutable-file-system)
+    - [x] [操作示例](/unixfs/files_op.md) 
+  - [ ] 其他
   - [ ] 源码分析
 
 ### IPFS Cluster
