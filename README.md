@@ -7,7 +7,7 @@
 - [x] [interface理解](/go-basic/interface)
 
 ### IPFS协议总览
-- [x] [IPFS项目进度]()
+- [x] [IPFS项目进度]
 	- [pm记录](https://github.com/ipfs/pm)
 	- ![](https://img.shields.io/badge/status-wip-orange.svg?style=flat-square) - 规范制定中，不成熟。
 	- ![](https://img.shields.io/badge/status-draft-yellow.svg?style=flat-square) - 草稿完成，很有可能做较大变更。
@@ -15,7 +15,11 @@
 	- ![](https://img.shields.io/badge/status-stable-brightgreen.svg?style=flat-square) - 规范稳定，本质不变，可能做小的改善。
 	- ![](https://img.shields.io/badge/status-permanent-blue.svg?style=flat-square) - 完全稳定，永久不变。
 - [x] [协议总览](https://github.com/ipfs/specs/tree/master/architecture)
-- [x] [merkledag瘦腰图](https://github.com/ipfs/specs/blob/master/merkledag/mdag.waist.png) 与 [IP瘦腰图](https://github.com/ipfs/specs/blob/master/merkledag/ip.waist.png)
+
+![](https://github.com/ipfs/specs/blob/master/merkledag/mdag.waist.png) 
+
+![](https://github.com/ipfs/specs/blob/master/merkledag/ip.waist.png)
+
 - [x] [国内研究参考]
 	- [x] [mornmist team](https://github.com/mornmist/Newcomer-Guide)
 	- [x] [mornmist ipfs](https://github.com/mornmist/IPFS-For-Chinese)

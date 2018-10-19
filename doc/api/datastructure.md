@@ -62,7 +62,7 @@ wayne@wayne:~$ ipfs object get QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n
 - ipfs files stat
 - ipfs files write
 
-![ipfs_files](/../image/ipfs_files.png)
+![](/doc/image/ipfs_files.png)
 
 ### dag           
 >Interact with IPLD documents (experimental)
