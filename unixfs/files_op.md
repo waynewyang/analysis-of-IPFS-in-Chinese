@@ -1,3 +1,8 @@
+# 目录
+- [mfs操作](#mfs操作)
+- [发布ipns](#发布ipns)
+
+## mfs操作
 ```
 wayne@wayne:~$ mkdir test
 wayne@wayne:~$ cd test/
@@ -91,4 +96,28 @@ Size: 3
 CumulativeSize: 11
 ChildBlocks: 0
 Type: file
+```
+## 发布ipns
+
+```
+wayne@wayne:~/ipfs$ ipfs files stat /mfs/root
+QmUcuL8qVARvjMrCDhLwcXkJmkYwoDoVR5hmjB2ipq8TrY
+Size: 0
+CumulativeSize: 225
+ChildBlocks: 3
+Type: directory
+wayne@wayne:~/ipfs$  ipfs name publish --key=arsyuntestkey /ipfs/QmUcuL8qVARvjMrCDhLwcXkJmkYwoDoVR5hmjB2ipq8TrY
+Published to QmQYVKeRkbE9aE21ysH1qUQJyQ6nHKvFKh98Kg8wfwRaYF: /ipfs/QmUcuL8qVARvjMrCDhLwcXkJmkYwoDoVR5hmjB2ipq8TrY
+wayne@wayne:~/ipfs$ ipfs get /ipns/QmQYVKeRkbE9aE21ysH1qUQJyQ6nHKvFKh98Kg8wfwRaYF
+Saving file(s) to QmQYVKeRkbE9aE21ysH1qUQJyQ6nHKvFKh98Kg8wfwRaYF
+ 225 B / 225 B [====================================================================================] 100.00% 0s
+wayne@wayne:~/ipfs$ cd QmQYVKeRkbE9aE21ysH1qUQJyQ6nHKvFKh98Kg8wfwRaYF/
+wayne@wayne:~/ipfs/QmQYVKeRkbE9aE21ysH1qUQJyQ6nHKvFKh98Kg8wfwRaYF$ ls
+a  b  c
+wayne@wayne:~/ipfs/QmQYVKeRkbE9aE21ysH1qUQJyQ6nHKvFKh98Kg8wfwRaYF$ cat a
+aa
+wayne@wayne:~/ipfs/QmQYVKeRkbE9aE21ysH1qUQJyQ6nHKvFKh98Kg8wfwRaYF$ cat b
+bb
+wayne@wayne:~/ipfs/QmQYVKeRkbE9aE21ysH1qUQJyQ6nHKvFKh98Kg8wfwRaYF$ cat c
+hello world
 ```
