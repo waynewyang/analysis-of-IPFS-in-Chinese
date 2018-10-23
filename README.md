@@ -125,7 +125,6 @@
 - [x] [namesys](/namesys)
 	- [x] [dns](/namesys/dns) 
 	- [x] [ipns](/namesys/ipns)
-	- [ ] [publish等其他细节代码分析]
 
 - [回到目录](#目录)
 
