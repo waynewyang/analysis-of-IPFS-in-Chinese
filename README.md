@@ -1,10 +1,22 @@
-## IPFS
+# IPFS
+## 目录
+- [go语言基础](#GO语言基础)
+- [IPFS协议总览](#IPFS协议总览)
+- [IPFS API](#IPFS API)
+- [基础模块分析](#基础模块分析)
+- [IPFS协议层分析](#IPFS协议层分析)
+- [IPFS应用层数据结构](#IPFS应用层数据结构)
+- [IPFS Cluster](#IPFS Cluster)
+- [IPFS&libP2P协议对于我们来说存在的主要问题](#IPFS&libP2P协议对于我们来说存在的主要问题)
+- [基于IPFS应用规划](#基于IPFS应用规划)
 
 ### GO语言基础
 - [x] [go依赖包编译注意](/doc/compile.md)
 - [x] [context用法](/go-basic/context)
 - [x] [空struct用法](/go-basic/nullstruct)
 - [x] [interface理解](/go-basic/interface)
+
+- [回到目录](#目录)
 
 ### IPFS协议总览
 - [x] [IPFS项目进度]
@@ -24,7 +36,9 @@
 	- [x] [mornmist ipfs](https://github.com/mornmist/IPFS-For-Chinese)
 - [x] [libp2p笔记](https://gitlab.com/waynewyang/libp2p)
 
-### IPFS API熟悉
+- [回到目录](#目录)
+
+### IPFS API
 - [x] 参考
 	- [x] [参考](https://ipfs.docs.apiary.io)
 	- [x] [public-api](https://github.com/ipfs/specs/tree/master/public-api)
@@ -37,10 +51,14 @@
 	- [x] [tool](/doc/api/tool.md)
 	- [ ] [others](/doc/api/others.md) 
 
+- [回到目录](#目录)
+
 ### libp2p接口使用
 - [ ] 转发使用
 	- [x] [命令](/doc/network.md)
 	- [ ] 编码
+
+- [回到目录](#目录)
 
 ### 基础模块分析
 - [x] [multiformats](/doc/multiformat.md)
@@ -61,6 +79,8 @@
 	- [ ] [semver](/semver)
 	- [ ] [IPFS数据导入导出/DEX](https://github.com/ipfs/specs/tree/master/dex)
 
+- [回到目录](#目录)
+
 ### IPFS主流程源码概要分析
 - [ ] ipfs init
 - [ ] ipfs daemon
@@ -68,7 +88,9 @@
 - [ ] ipfs get
 - [ ] cancel
 
-### IPFS协议层
+- [回到目录](#目录)
+
+### IPFS协议层分析
 - [ ] network
 	- [x] [pnet](/go-libp2p-interface-pnet)
 	- [ ] relay
@@ -98,7 +120,9 @@
 		- [x] [go-ipns](/ipns/go-ipns)
 		- [ ] [publish等其他细节代码分析]
 
-### IPFS应用层及数据结构
+- [回到目录](#目录)
+
+### IPFS应用层数据结构
 - [x] [unixfs](/unixfs)
 	- [x] mount
 		- [x] 可使用mount操作将ipfs文件系统以只读的方式挂载在unix文件系统之上进行操作
@@ -108,6 +132,8 @@
 	- [ ] 其他
 	- [ ] 源码分析
 
+- [回到目录](#目录)
+
 ### IPFS Cluster
 - [x] 参考
 	- [x] [源码](https://github.com/ipfs/ipfs-cluster)
@@ -116,9 +142,13 @@
 	- [x] [使用示例](/ipfs-cluster/example)
 	- [ ] 源码分析
 
+- [回到目录](#目录)
+
 ### IPFS&libP2P协议对于我们来说存在的主要问题
 - 只能指定单目录存储，如果FILECOIN不做处理，硬盘的换盘会比较麻烦
 - libP2P穿透差
+
+- [回到目录](#目录)
 
 ### 基于IPFS应用规划
 - [ ] 先河IPFS网盘
@@ -126,3 +156,5 @@
 - [ ] 共享圈
 - [ ] 分布式鉴权云存储
 - [ ] 分布式聊天
+
+- [回到目录](#目录)
