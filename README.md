@@ -1,16 +1,16 @@
 # IPFS
 ## 目录
-- [go语言基础](#GO语言基础)
-- [IPFS协议总览](#IPFS协议总览)
-- [IPFS API](#IPFS API)
+- [语言基础](#语言基础)
+- [协议总览](#协议总览)
+- [对外接口](#对外接口)
 - [基础模块分析](#基础模块分析)
-- [IPFS协议层分析](#IPFS协议层分析)
-- [IPFS应用层数据结构](#IPFS应用层数据结构)
-- [IPFS Cluster](#IPFS Cluster)
-- [IPFS&libP2P协议对于我们来说存在的主要问题](#IPFS&libP2P协议对于我们来说存在的主要问题)
-- [基于IPFS应用规划](#基于IPFS应用规划)
+- [协议层分析](#协议层分析)
+- [应用层数据结构](#应用层数据结构)
+- [IPFS-Cluster](#IPFS-Cluster)
+- [协议当前对于我们来说存在的主要问题](#协议当前对于我们来说存在的主要问题)
+- [我们的应用规划](#我们的应用规划)
 
-### GO语言基础
+### 语言基础
 - [x] [go依赖包编译注意](/doc/compile.md)
 - [x] [context用法](/go-basic/context)
 - [x] [空struct用法](/go-basic/nullstruct)
@@ -18,7 +18,7 @@
 
 - [回到目录](#目录)
 
-### IPFS协议总览
+### 协议总览
 - [x] [IPFS项目进度]
 	- [pm记录](https://github.com/ipfs/pm)
 	- ![](https://img.shields.io/badge/status-wip-orange.svg?style=flat-square) - 规范制定中，不成熟。
@@ -38,7 +38,7 @@
 
 - [回到目录](#目录)
 
-### IPFS API
+### 对外接口
 - [x] 参考
 	- [x] [参考](https://ipfs.docs.apiary.io)
 	- [x] [public-api](https://github.com/ipfs/specs/tree/master/public-api)
@@ -90,7 +90,7 @@
 
 - [回到目录](#目录)
 
-### IPFS协议层分析
+### 协议层分析
 - [ ] network
 	- [x] [pnet](/go-libp2p-interface-pnet)
 	- [ ] relay
@@ -122,7 +122,7 @@
 
 - [回到目录](#目录)
 
-### IPFS应用层数据结构
+### 应用层数据结构
 - [x] [unixfs](/unixfs)
 	- [x] mount
 		- [x] 可使用mount操作将ipfs文件系统以只读的方式挂载在unix文件系统之上进行操作
@@ -134,7 +134,7 @@
 
 - [回到目录](#目录)
 
-### IPFS Cluster
+### IPFS-Cluster
 - [x] 参考
 	- [x] [源码](https://github.com/ipfs/ipfs-cluster)
 	- [x] [文档](https://cluster.ipfs.io/documentation/)
@@ -144,13 +144,13 @@
 
 - [回到目录](#目录)
 
-### IPFS&libP2P协议对于我们来说存在的主要问题
+### 协议当前对于我们来说存在的主要问题
 - 只能指定单目录存储，如果FILECOIN不做处理，硬盘的换盘会比较麻烦
 - libP2P穿透差
 
 - [回到目录](#目录)
 
-### 基于IPFS应用规划
+### 我们的应用规划
 - [ ] 先河IPFS网盘
 - [ ] 同步盘
 - [ ] 共享圈
