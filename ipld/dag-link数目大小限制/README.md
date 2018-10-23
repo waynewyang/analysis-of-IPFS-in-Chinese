@@ -1,8 +1,8 @@
 gx/ipfs/QmVNEJ5Vk1e2G5kHMiuVbpD6VQZiK1oS6aWZKjcUQW7hEy/go-unixfs/importer/helpers/helpers.go
 
-var roughLinkBlockSize = 1 左移 13 bit
-var roughLinkSize = 34 + 8 + 5
-var DefaultLinksPerBlock = (roughLinkBlockSize / roughLinkSize)=174
+- var roughLinkBlockSize = 1 左移 13 bit
+- var roughLinkSize = 34 + 8 + 5
+- var DefaultLinksPerBlock = (roughLinkBlockSize / roughLinkSize)=174
 
 - link结构体，来自format.go
 ```

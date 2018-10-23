@@ -1,17 +1,15 @@
-# datastore（待分析完善）
-
-## 参考
-[fsrepo](https://github.com/ipfs/go-ipfs/blob/master/repo/fsrepo/fsrepo.go)
+# datastore
+问题
 
 ## 原始块block存储
-- [flatfs](https://github.com/ipfs/go-ds-flatfs)
+
 - 路径 /path/to/ipfsrepo/blocks
 1. linux默认路径~/.ipfs/blocks
-2. 存储的最终block格式待分析？
+2. blocks存储什么？
 
 ## 键值存储
-- [leveldb](https://github.com/ipfs/go-ds-leveldb)
-- 存储的具体内容待分析？
+
+- 存储的具体内容？
 
 - 非init阶段存储
 
@@ -47,3 +45,5 @@ key:/ipns/CIQLAXB2MILLTDVIOMIMEVRLTJOO2RF45WVCDFIDM7K7CIQNS5SACDI, value:
 key:/local/filesroot, value: Y攧9_)a烎€斯2綬舖櫯杒e?9饦伙
 key:/local/pins, value: Χ!覭嬘#Nゝ睯峦5S??L?熦vG?
 ```
+
+## [笔记](datastores/note.md)

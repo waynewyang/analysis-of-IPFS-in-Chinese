@@ -1,7 +1,7 @@
 gx/ipfs/QmRDaC5z6yXkXTTSWzaxs2sSVBon5RRCN6eNtMmpuHtKCr/go-merkledag
 dag的具体实现
-1 注册了三种格式的服务 Protobuf,Raw,DagCBOR
-2 包含了Protobuf,Raw的具体接口实现，见node.go与raw.go
+- 1 注册了三种格式的服务 Protobuf,Raw,DagCBOR
+- 2 包含了Protobuf,Raw的具体接口实现，见node.go与raw.go
 
 ```
 // Package merkledag implements the IPFS Merkle DAG data structures.

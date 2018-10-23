@@ -1,7 +1,7 @@
 ## DATA STRUCTURE COMMANDS
 ### 总述
 - block 块包含cid与data
-- object ：包含 block及links，是dag解码后的原始数据
+- object ：包含 block及links，表示一个单一的node
 - dag ： object序列化之后的数据
 - files ： 类unix文件系统操作
 ### block         

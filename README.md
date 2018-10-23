@@ -49,18 +49,17 @@
   - [x] [maddr-filter](/multiaddrs/maddr-filter)
   - [x] [multiaddr-filter](/multiaddrs/multiaddr-filter)
 - [x] [cid](/doc/cid.md)
-
-- [ ] repo
-	- [ ] [参考 ](https://github.com/ipfs/specs/tree/master/repo) 
-	- [ ] [datastores](/doc/datastores.md)
-  		- [ ] leveldb
-		- [ ] go-ds-flatfs
-		- [ ] filestore
-- [ ] [protobuf](/protobuf)
-  - [ ] io(gogo-protobuf/io)
-- [ ] [semver](/semver)
-- [ ] 未完成部分
-  - [ ] [IPFS数据导入导出/DEX](https://github.com/ipfs/specs/tree/master/dex)
+- [x] repo
+	- [x] [参考 ](https://github.com/ipfs/specs/tree/master/repo) 
+		- 文档未更新 
+	- [x] [datastores](/datastores/README.md)
+		- [x] [笔记](datastores/note.md)
+		- [x] [示例](/datastores/example.md)
+	- [ ] [细节源码分析](/datastores/源码分析.md)
+- [ ] 其他
+	- [ ] [protobuf](/protobuf)
+	- [ ] [semver](/semver)
+	- [ ] [IPFS数据导入导出/DEX](https://github.com/ipfs/specs/tree/master/dex)
 
 ### IPFS主流程源码概要分析
 - [ ] ipfs init

@@ -2,18 +2,16 @@
 
 ### 说明
 
-format主要规范定义了IPLD的接口抽象层
-
-对DAG的批量管理，缓冲大小限制8M（8左移20位），节点数目限制128个
-
-对于不同格式的IPLD解析器，需要分别去实现。
+- format主要规范定义了IPLD的接口抽象层
+- 对DAG的批量管理，缓冲大小限制8M（8左移20位），节点数目限制128个
+- 对于不同格式的IPLD解析器，需要分别去实现。
 
 ### 源码分析
 
 - format.go
-    1 Node是所有IPLD对象必须实现的接口
-    2 Node表征了IPLD对戏那个包含的数据以及其links
-    3 节点与link之间的互相转换
+	- Node是所有IPLD对象必须实现的接口
+	- Node表征了IPLD对像包含的数据以及其links
+	- 节点与link之间的互相转换
 
 ```
 package format
@@ -125,8 +123,10 @@ func (l *Link) GetNode(ctx context.Context, serv NodeGetter) (Node, error) {
 ```
 - coding.go 
 
-目的是对block进行解码为node，node是IPLD的最小单元(实现了IPLD的所有接口)
-BlockDecoder  规范了注册解码函数，以及具体解码的接口，由safeBlockDecoder实现
+	- 目的是对block进行解码为node，node是IPLD的最小单元(实现了IPLD的所有接口)
+	- BlockDecoder  规范了注册解码函数，以及具体解码的接口，由safeBlockDecoder实现
+
+
 ```
 package format
 
@@ -198,9 +198,9 @@ func Register(codec uint64, decoder DecodeBlockFunc) {
 
 
 - merkledag.go
-    1 NodeGetter接口，通过cid获取Node
-    2 LinkGetter接口，通过cid获取Links
-    3 DAGService 接口，对DAG进行增删操作
+	- NodeGetter接口，通过cid获取Node
+	- LinkGetter接口，通过cid获取Links
+	- DAGService 接口，对DAG进行增删操作
 
 ```
 package format
@@ -271,7 +271,7 @@ type DAGService interface {
 }
 ```
 - batch.go
-    批量对dag进行操作 
+	- 批量对dag进行操作 
 
 ```
 package format
@@ -457,9 +457,9 @@ loop:
 }
 ```
 - promise.go
-    1 线程安全，阻塞性获取node
-    2 Send 赋值
-    3 Get 获取node
+	- 线程安全，阻塞性获取node
+	- Send 赋值
+	- Get 获取node
 
 ```
 package format
@@ -530,7 +530,7 @@ func (np *NodePromise) Get(ctx context.Context) (Node, error) {
 }
 ```
 - daghelper.go
-    dag的对象获取操作函数
+	- dag的对象获取操作函数
 
 ```
 package format
