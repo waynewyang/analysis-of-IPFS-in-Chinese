@@ -1,22 +1,21 @@
 # IPFS
 ## 目录
-- [语言基础](#语言基础)
-- [协议总览](#协议总览)
-- [对外接口](#对外接口)
-- [基础模块分析](#基础模块分析)
-- [协议层分析](#协议层分析)
-- [应用层数据结构](#应用层数据结构)
-- [IPFS-Cluster](#ipfs-cluster)
-- [协议当前对于我们来说存在的主要问题](#协议当前对于我们来说存在的主要问题)
-- [我们的应用规划](#我们的应用规划)
-
-### 语言基础
-- [x] [go依赖包编译注意](/doc/compile.md)
-- [x] [context用法](/go-basic/context)
-- [x] [空struct用法](/go-basic/nullstruct)
-- [x] [interface理解](/go-basic/interface)
-
-- [回到目录](#目录)
+- IPFS协议总览
+	- [协议总览](#协议总览)
+	- [对外接口](#对外接口)
+- 基础
+	- [语言基础](#语言基础)
+	- [基础模块分析](#基础模块分析)
+- IPFS协议分析
+	- [协议层分析](#协议层分析)
+	- [应用层数据结构](#应用层数据结构)
+- IPFS主要业务逻辑分析
+	- [IPFS主流程概要分析](#ipfs主流程概要分析)
+- 应用
+	- [IPFS-Cluster](#ipfs-cluster)
+	- 先河IPFS应用
+		- [协议当前对于我们来说存在的主要问题](#协议当前对于我们来说存在的主要问题)
+		- [我们的应用规划](#我们的应用规划)
 
 ### 协议总览
 - [x] [IPFS项目进度]
@@ -60,6 +59,14 @@
 
 - [回到目录](#目录)
 
+### 语言基础
+- [x] [go依赖包编译注意](/doc/compile.md)
+- [x] [context用法](/go-basic/context)
+- [x] [空struct用法](/go-basic/nullstruct)
+- [x] [interface理解](/go-basic/interface)
+
+- [回到目录](#目录)
+
 ### 基础模块分析
 - [x] [multiformats](/doc/multiformat.md)
   - [x] [mafmt](/multiaddrs/mafmt)
@@ -81,7 +88,7 @@
 
 - [回到目录](#目录)
 
-### IPFS主流程源码概要分析
+### IPFS主流程概要分析
 - [ ] ipfs init
 - [ ] ipfs daemon
 - [ ] ipfs add
