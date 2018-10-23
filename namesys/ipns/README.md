@@ -1,18 +1,93 @@
-# IPNS 底层模块
+# IPNS 原理分析
 
-## 主要目的
+## 底层go-ipns包
 
+### 创建IPNS对象
+> func Create(sk ic.PrivKey, val []byte, seq uint64, eol time.Time) (*pb.IpnsEntry, error) 
+> 用私钥创建IPNS对象，映射具体的ipfsPath
+> sk 私钥， val:真实的ipfs路径, seq 序号，eol 有效期
+
+### IPNS对象与内容哈希的绑定
+> func EmbedPublicKey(pk ic.PubKey, entry *pb.IpnsEntry) error
+>  建立内容hash与ipns的映射,第一个参数是真实的内容哈希地址，第二个是IPNS对象
 - 提供ipns对象创建方法
-- 绑定及查找
-	- 提供ipns对象与特定ipfs路径的绑定方法
-	- 提供ipns记录的查找（最新记录）方法
-	- 目前的实现是没有历史记录的，历史记录在ipfs网络之中，但是没有没ipns映射
-- 底层方法不涉及网络，在go-ipfs/namesys 中会使用这些方法结合DHT使用
 
+### IPNS对象的查找
+> func selectRecord(recs []*pb.IpnsEntry, vals [][]byte) (int, error) 
+> 有超过1条以上ipns记录，则返回最新的记录
+
+> 目前的实现是没有历史记录的，历史记录在ipfs网络之中，但是没有没ipns映射
+
+## namesys包
+- 接口
+```
+go-ipfs/namesys/interface.go
+// Namesys represents a cohesive name publishing and resolving system.
+//
+// Publishing a name is the process of establishing a mapping, a key-value
+// pair, according to naming rules and databases.
+//
+// Resolving a name is the process of looking up the value associated with the
+// key (name).
+type NameSystem interface {
+	Resolver
+	Publisher
+}
+
+// Resolver is an object capable of resolving names.
+type Resolver interface {
+
+	// Resolve performs a recursive lookup, returning the dereferenced
+	// path.  For example, if ipfs.io has a DNS TXT record pointing to
+	//   /ipns/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
+	// and there is a DHT IPNS entry for
+	//   QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
+	//   -> /ipfs/Qmcqtw8FfrVSBaRmbWwHxt3AuySBhJLcvmFYi3Lbc4xnwj
+	// then
+	//   Resolve(ctx, "/ipns/ipfs.io")
+	// will resolve both names, returning
+	//   /ipfs/Qmcqtw8FfrVSBaRmbWwHxt3AuySBhJLcvmFYi3Lbc4xnwj
+	//
+	// There is a default depth-limit to avoid infinite recursion.  Most
+	// users will be fine with this default limit, but if you need to
+	// adjust the limit you can specify it as an option.
+	Resolve(ctx context.Context, name string, options ...opts.ResolveOpt) (value path.Path, err error)
+}
+
+// Publisher is an object capable of publishing particular names.
+type Publisher interface {
+
+	// Publish establishes a name-value mapping.
+	// TODO make this not PrivKey specific.
+	Publish(ctx context.Context, name ci.PrivKey, value path.Path) error
+
+	// TODO: to be replaced by a more generic 'PublishWithValidity' type
+	// call once the records spec is implemented
+	PublishWithEOL(ctx context.Context, name ci.PrivKey, value path.Path, eol time.Time) error
+}
+
+```
+
+- publish
+> Publish动作->更新本地的ipns记录->
+> 调用route层(go-libp2p-routing)的PutValue方法发布ipns记录
+
+> IpnsPublisher实现了Publish接口
+func (p *IpnsPublisher) Publish(ctx context.Context, k ci.PrivKey, value path.Path) error
+
+> func PutRecordToRouting(ctx context.Context, r routing.ValueStore, k ci.PubKey, entry *pb.IpnsEntry) error
+> ipns.EmbedPublicKey(k, entry)
+
+>func PublishEntry(ctx context.Context, r routing.ValueStore, ipnskey string, rec *pb.IpnsEntry)
+>r.PutValue(timectx, ipnskey, data)
+
+- Resolver
+> Resolver动作->查询本地记录->缓存OK，结束
+> 不OK，调用路由层GetValue方法
 
 ## 代码分析
 
-- ipns.go
+- ipns包ipns.go
 
 ```
 package ipns
@@ -53,7 +128,7 @@ func Create(sk ic.PrivKey, val []byte, seq uint64, eol time.Time) (*pb.IpnsEntry
 	return entry, nil
 }
 
-// 校验IPNS对象
+// 校验IPNS对象，签名、过期时间等
 // Validates validates the given IPNS entry against the given public key.
 func Validate(pk ic.PubKey, entry *pb.IpnsEntry) error {
 	// Check the ipns record signature with the public key
@@ -195,7 +270,7 @@ func ipnsEntryDataForSig(e *pb.IpnsEntry) []byte {
 		[]byte{})
 }
 ```
-- record.go
+- ipns包record.go
 ```
 package ipns
 

@@ -1,4 +1,4 @@
-# DNS
+# IPFS协议DNS分析
 
 ## 目录
 - [基础知识](#基础知识)
@@ -62,6 +62,11 @@ NS记录是域名服务器记录，用来指定域名由哪台服务器来进行
 - [回到目录](#目录)
 
 ## 代码分析
+> namesys 中base.go定义以及实现了resolver接口，接口传参为通用域名
+
+> namesys中dns.go定义DNSResolver结构体，其中lookupTXT调用go网络包中的net.LookupTXT方法，用于解析TXT记录，得到自定义的ipfs或者ipns路径
+
+
 - base.go
 ```
 //解析接口

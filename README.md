@@ -9,6 +9,7 @@
 - IPFS协议分析
 	- [协议层分析](#协议层分析)
 	- [应用层数据结构](#应用层数据结构)
+	- [debug方法](协议debug方法)
 - IPFS主要业务逻辑分析
 	- [IPFS主流程概要分析](#ipfs主流程概要分析)
 - 应用
@@ -33,6 +34,7 @@
 - [x] [国内研究参考]
 	- [x] [mornmist team](https://github.com/mornmist/Newcomer-Guide)
 	- [x] [mornmist ipfs](https://github.com/mornmist/IPFS-For-Chinese)
+	- [x] [《IPFS与区块链：原理与实践》 董天一书籍目录](http://www.ipfstalk.org/?t/197.html)
 - [x] [libp2p笔记](https://gitlab.com/waynewyang/libp2p)
 
 - [回到目录](#目录)
@@ -120,24 +122,26 @@
 	- [x] [dag-link数目大小限制](/ipld/dag-link数目大小限制)
 	- [ ] 规范设计中的项目概览
 		- [ ] [CAR](https://github.com/ipld/specs/blob/master/CAR.md)
-- [x] [namesys](/ipns)
-	- [x] [参考其他解释](https://www.jianshu.com/p/04d3e3cc9f1c)
-	- [x] [go-ipfs-namesys](/ipns/go-ipfs-namesys)
-		- [x] [dns](/ipns/go-ipfs-namesys/dns) 
-		- [x] [go-ipns](/ipns/go-ipns)
-		- [ ] [publish等其他细节代码分析]
+- [x] [namesys](/namesys)
+	- [x] [dns](/namesys/dns) 
+	- [x] [ipns](/namesys/ipns)
+	- [ ] [publish等其他细节代码分析]
 
 - [回到目录](#目录)
 
 ### 应用层数据结构
 - [x] [unixfs](/unixfs)
 	- [x] mount
-		- [x] 可使用mount操作将ipfs文件系统以只读的方式挂载在unix文件系统之上进行操作
+		- [x] 挂载在unix文件系统之上进行操作
 		- [x] [mount 示例](/unixfs/mount.md)
 	- [x] [files(mfs)参考](https://github.com/ipfs/interface-ipfs-core/blob/master/SPEC/FILES.md#mutable-file-system)
     	- [x] [操作示例](/unixfs/files_op.md) 
 	- [ ] 其他
 	- [ ] 源码分析
+
+- [回到目录](#目录)
+
+### 协议debug方法
 
 - [回到目录](#目录)
 

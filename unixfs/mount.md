@@ -1,3 +1,40 @@
+- mount之后ipns空间可以做unix系统正常操作
+
+```
+wayne@wayne:/ipns/QmXAMaVdj4YyxfNze8ofhfveDPyUJ4Z4FWPWhPpugRb7RP$ ls
+test  test1  wayne
+wayne@wayne:/ipns/QmXAMaVdj4YyxfNze8ofhfveDPyUJ4Z4FWPWhPpugRb7RP$ echo  arsyun-test > arsyun-test
+wayne@wayne:/ipns/QmXAMaVdj4YyxfNze8ofhfveDPyUJ4Z4FWPWhPpugRb7RP$ ls
+arsyun-test  test  test1  wayne
+wayne@wayne:/ipns/QmXAMaVdj4YyxfNze8ofhfveDPyUJ4Z4FWPWhPpugRb7RP$ cat arsyun-test 
+arsyun-test
+```
+
+```
+wayne@wayne:~/.ipfs/blocks$ ll -ltr
+......
+drwxr-xr-x   2 wayne wayne 4096 Oct 23 14:39 5K/
+drwxr-xr-x   2 wayne wayne 4096 Oct 23 14:39 NW/
+drwxr-xr-x   2 wayne wayne 4096 Oct 23 14:39 LM/
+drwxr-xr-x   2 wayne wayne 4096 Oct 23 14:39 MB/
+
+wayne@wayne:~/.ipfs/blocks$ cat NW/CIQI33T24OB6MU5PMMDV7PMLMZP3JSX4J5OJUL6HB2WTVEVZMTYFNWQ.data 
+ arsyun-test
+
+wayne@wayne:~/.ipfs/blocks$ cd ~/ipfs/datastores/cid-dskey/
+wayne@wayne:~/ipfs/datastores/cid-dskey$ go build cid-dskey.go 
+wayne@wayne:~/ipfs/datastores/cid-dskey$ ./cid-dskey  -d CIQI33T24OB6MU5PMMDV7PMLMZP3JSX4J5OJUL6HB2WTVEVZMTYFNWQ
+QmXth7D91zk2QjsydWhr2hhzymdbsUnm9XYWWokoPMiNC1
+wayne@wayne:~/ipfs/datastores/cid-dskey$ ipfs object get QmXth7D91zk2QjsydWhr2hhzymdbsUnm9XYWWokoPMiNC1
+{"Links":[],"Data":"\u0008\u0000\u0012\u000carsyun-test\n\u0018\u000c"}
+wayne@wayne:~/ipfs/datastores/cid-dskey$ ipfs cat QmXth7D91zk2QjsydWhr2hhzymdbsUnm9XYWWokoPMiNC1       
+arsyun-test
+wayne@wayne:~/ipfs/datastores/cid-dskey$ 
+```
+
+
+
+- mount命令说明
 ```
 wayne@wayne:~/ipfs/unixfs$ ipfs mount --help
 USAGE
@@ -52,4 +89,7 @@ DESCRIPTION
   baz
   > cat /ipfs/QmWLdkp93sNxGRjnFHPaYg8tCQ35NBY3XPn6KiETd3Z4WR
   baz
-  ```
+```
+
+
+
