@@ -5,6 +5,8 @@
 - format主要规范定义了IPLD的接口抽象层
 - 对于不同格式的IPLD解析器，需要分别去实现。
 
+比如get dag为例，执行本地block操作，如果本地get不到，会调用交换层接口-->路由层->网络层，逐层调用获取
+
 ## 主要接口
 ```
 // DAGService is an IPFS Merkle DAG service.
@@ -29,6 +31,36 @@ type DAGService interface {
 	//
 	// It returns success even if the nodes were not present in the DAG.
 	RemoveMany(context.Context, []*cid.Cid) error
+}
+```
+
+```
+func NewDAGService(bs bserv.BlockService) *dagService {
+	return &dagService{Blocks: bs}
+}
+```
+```
+DAG层会操作本地，也会通过调用BlockService中的Exchange接口，调用交换层接口
+blockservice包
+type BlockService interface {
+	io.Closer
+	BlockGetter
+
+	// Blockstore returns a reference to the underlying blockstore
+	Blockstore() blockstore.Blockstore
+
+	// Exchange returns a reference to the underlying exchange (usually bitswap)
+	Exchange() exchange.Interface
+
+	// AddBlock puts a given block to the underlying datastore
+	AddBlock(o blocks.Block) error
+
+	// AddBlocks adds a slice of blocks at the same time using batching
+	// capabilities of the underlying datastore whenever possible.
+	AddBlocks(bs []blocks.Block) error
+
+	// DeleteBlock deletes the given block from the blockservice.
+	DeleteBlock(o *cid.Cid) error
 }
 ```
 

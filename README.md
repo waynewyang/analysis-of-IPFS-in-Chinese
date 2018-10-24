@@ -22,8 +22,8 @@
 	- [IPFS应用层数据结构](#应用层数据结构)
 		- unixfs
 	- [debug方法](#协议debug方法)
-- IPFS主要业务逻辑分析
-	- [IPFS主流程概要分析](#ipfs主流程概要分析)
+- IPFS主要API逻辑分析
+	- [IPFS主要API概要分析](#ipfs主流程概要分析)
 		- init、daemon、add、get、cancel
 - 应用
 	- 官方应用
@@ -200,12 +200,7 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 > ipfs log tail
 - [回到目录](#目录)
 
-### IPFS主流程概要分析
-- [ ] ipfs init
-- [ ] ipfs daemon
-- [ ] ipfs add
-- [ ] ipfs get
-- [ ] cancel
+### [IPFS主流程概要分析](/主要api流程概要分析)
 
 - [回到目录](#目录)
 
