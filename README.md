@@ -35,26 +35,30 @@
 	> 官网：IPFS是分布式Web,一种点对点超媒体协议，使网络更快，更安全，更开放。
 	
 - 参考技术
-	> ice协议——网络连通性
+	- ice协议——网络连通性
 	> 解释：解决peers之间的连通性
 
-	> DHT技术，KAD、coral算法——分布式路由
+	- DHT技术，KAD、coral算法——分布式路由
 	> 解释：解决peers之间的路由、内容路由（内容寻址）、以及分布式哈希key-value存储
+	
 	> 重要特征：内容寻址、或者说哈希寻址
 	
-	> bt——交换技术
+	- bt——交换技术
 	> 解释：解决peers之间的内容交换
+	
 	> 重要特征：P2P分布式、更快、更开放
 	
-	> git——数据结构
+	- git——数据结构
 	> 解释：MerkleDAG借鉴git的数据存储方式，解决数据的防篡改、去重
+	
 	> 重要特征：防篡改、去重
 	
-	> sfs——命名系统
+	- sfs——命名系统
 	> 解决哈希难以记忆、以及由于DAG特性导致的动态数据变更导致的更新成本问题
+	
 	> 重要特征：版本化（通过ipns的发布记录）、ipns解析（人类更容易识别操作）、dns解析
 
-	> unixfs系统
+	- unixfs系统
 	> 特征：unixfs挂载特性，挂载的ipfs类似一个文件系统，可以使用unix方式访问全球哈希。
 
 ```
@@ -91,9 +95,10 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 ![](/doc/image/ip.waist.png)
 
 - [x] [国内研究参考]
-	- [x] [mornmist team](https://github.com/mornmist/Newcomer-Guide)
-	- [x] [mornmist ipfs](https://github.com/mornmist/IPFS-For-Chinese)
-	- [x] [《IPFS与区块链：原理与实践》 董天一书籍目录](http://www.ipfstalk.org/?t/197.html)
+	- [x] 董天一团队
+		- [x] [mornmist team](https://github.com/mornmist/Newcomer-Guide)
+		- [x] [mornmist ipfs](https://github.com/mornmist/IPFS-For-Chinese)
+		- [x] [《IPFS与区块链：原理与实践》 董天一书籍目录](http://www.ipfstalk.org/?t/197.html)
 	- [x] [西二旗李老师-简书](https://www.jianshu.com/u/832753b872c5)
 
 - [回到目录](#目录)
@@ -160,13 +165,13 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 - [回到目录](#目录)
 
 ### 协议层分析
-- [ ] network
+- [x] [network](/network)
 	- [x] [pnet](/go-libp2p-interface-pnet)
-	- [ ] relay
-	- [ ] 穿透
-- [ ] routing
-	- [x] DHT寻址原理
-	- [x] 源码中修改K桶 a并发与k值提高效率
+	- [x] [relay](/doc/network.md)
+	- [ ] 穿透，待分析，目前端口转发OK，穿透比较差
+- [x] [routing](/routing)
+	- [x] [DHT寻址原理](/routing/dht.md)
+	- [x] [源码中修改K桶 a并发与k值提高效率](/routing/修改并发属.md)
 - [x] block exchange
 	- [x] [block](/ipld/block)
 	- [x] [总览](https://github.com/ipfs/specs/tree/master/bitswap)
