@@ -1,4 +1,5 @@
 # IPFS分析笔记——Wayne
+![](/study.png) 
 ## 目录
 - IPFS协议总览
 	- [IPFS定义及参考技术](#ipfs定义及参考技术)
