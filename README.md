@@ -13,7 +13,13 @@
 		- repo—看看IPFS持久化的数据是什么样的
 - IPFS协议分析
 	- [协议层分析](#协议层分析)
+		- network
+		- routing
+		- exchange
+		- merkledag
+		- naming
 	- [IPFS应用层数据结构](#应用层数据结构)
+		- unixfs
 	- [debug方法](#协议debug方法)
 - IPFS主要业务逻辑分析
 	- [IPFS主流程概要分析](#ipfs主流程概要分析)
@@ -174,10 +180,7 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 	- [x] [源码中修改K桶 a并发与k值提高效率](/routing/修改并发属.md)
 - [x] block exchange
 	- [x] [block](/ipld/block)
-	- [x] [总览](https://github.com/ipfs/specs/tree/master/bitswap)
 	- [x] [笔记](/bitswap/bitswap)
-	- [x] [接口](/bitswap/exchange)
-	- [ ] [细节实现] 
 - [x] merkledag
 	- [x] DAG数据结构
 		cid -> block -> node ->dag
@@ -185,8 +188,6 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 	- [x] [ipld-cbor](/ipld/ipld-cbor)
 	- [x] [go-merkledag](/ipld/go-merkledag)
 	- [x] [dag-link数目大小限制](/ipld/dag-link数目大小限制)
-	- [ ] 规范设计中的项目概览
-		- [ ] [CAR](https://github.com/ipld/specs/blob/master/CAR.md)
 - [x] [namesys](/namesys)
 	- [x] [dns](/namesys/dns) 
 	- [x] [ipns](/namesys/ipns)

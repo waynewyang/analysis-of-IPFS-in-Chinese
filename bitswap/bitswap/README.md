@@ -1,15 +1,15 @@
 # bitswap协议笔记
 
+[参考github规范](https://github.com/ipfs/specs/tree/master/bitswap)
+
 ## 简介
 - 基于消息的协议，消息包含:请求block或者响应wantlist
     - 收到wantlist消息，ipfs节点判断是否有该块，并发送
     - 收到blocks，ipfs节点应该发出cancel消息，通知其他节点已经不需要该块
-- 重点在于实时性以及内存要求
 
 ## 子系统
-- [概要图](https://cloud.githubusercontent.com/assets/1211152/21071077/4620387a-be4a-11e6-895c-aa8f2b06aa4e.png)
-    请求模块：want-manager
-    服务模块：decision engine
+![](/bitswap/bitswap.png)
+​    请求模块：want-manager，    服务模块：decision engine
 
 - 相关模块
     cid、peer、block
@@ -36,7 +36,7 @@ message Message {
 ```
 
 - Want-Manager
-    调用Bitswap.GetBlock(cid)，将cid添加到wantlist，进行block请求
+    调用Bitswap.GetBlock(cid)，将cid添加到wantlist，调用路有层进行block请求
 
 - Decision Engine
     收到Message之后，（wanlist）为每一个cid创建一个task，添加到任务队列中，直至源节点请求的block被压入消息队列，任务完成。
@@ -67,6 +67,105 @@ message Message {
         - add peer to peer set + send them wantlist (maybe)
     - bitswap.peerDisconnected(peer)
         - remove peer from peer set
+## 对外接口
+- BitSwapNetwork
+```
+// BitSwapNetwork provides network connectivity for BitSwap sessions
+type BitSwapNetwork interface {
 
-## 实现代码
-gx/ipfs/Qmd8rU7X3VZzsgPnf2LSGUFu35zizYKajzXTRuHMUMqYJQ/go-bitswap
+	// SendMessage sends a BitSwap message to a peer.
+	//消息包含wantlists与blocks
+	// send wantlist 会调用exchange接口的GetBlocks()进行获取块
+	// send blocks 响应其他的blocks请求，调用网络层的发送
+	SendMessage(
+		context.Context,
+		peer.ID,
+		bsmsg.BitSwapMessage) error
+
+	// SetDelegate registers the Reciver to handle messages received from the
+	// network.
+	//接收，见type Receiver interface
+	SetDelegate(Receiver)
+
+	ConnectTo(context.Context, peer.ID) error
+
+	NewMessageSender(context.Context, peer.ID) (MessageSender, error)
+
+	ConnectionManager() ifconnmgr.ConnManager
+
+	Routing  //内容路由，接收到block的时候会调用路有层的Provide方法
+}
+
+type MessageSender interface {
+	SendMsg(context.Context, bsmsg.BitSwapMessage) error
+	Close() error
+	Reset() error
+}
+
+// 接收到wantlist的逻辑处理，判断本地是否有，没有的话调用路由层findprovide获取
+// 接收到需要的block的时候，cancel wanlist条目
+// Implement Receiver to receive messages from the BitSwapNetwork
+type Receiver interface {
+	ReceiveMessage(
+		ctx context.Context,
+		sender peer.ID,
+		incoming bsmsg.BitSwapMessage)
+
+	ReceiveError(error)
+
+	// Connected/Disconnected warns bitswap about peer connections
+	PeerConnected(peer.ID)
+	PeerDisconnected(peer.ID)
+}
+
+// 最终调用到路由层的接口，接口方法名称一致
+type Routing interface {
+	// FindProvidersAsync returns a channel of providers for the given key
+	FindProvidersAsync(context.Context, *cid.Cid, int) <-chan peer.ID
+
+	// Provide provides the key to the network
+	Provide(context.Context, *cid.Cid) error
+}
+```
+
+- exchange 在bitswap中实现
+```
+// Package exchange defines the IPFS exchange interface
+package exchange
+
+import (
+	"context"
+	"io"
+
+	blocks "gx/ipfs/QmWAzSEoqZ6xU6pu8yL8e5WaMb7wtbfbhhN4p1DknUPtr3/go-block-format"
+	cid "gx/ipfs/QmZFbDTY9jfSBms2MchvYM9oYRbAF19K7Pby47yDBfpPrb/go-cid"
+)
+
+// Interface defines the functionality of the IPFS block exchange protocol.
+type Interface interface { // type Exchanger interface
+	Fetcher
+
+	// TODO Should callers be concerned with whether the block was made
+	// available on the network?
+	HasBlock(blocks.Block) error
+
+	IsOnline() bool
+
+	io.Closer
+}
+
+// Fetcher is an object that can be used to retrieve blocks
+type Fetcher interface {
+	// GetBlock returns the block associated with a given key.
+	GetBlock(context.Context, *cid.Cid) (blocks.Block, error)
+	GetBlocks(context.Context, []*cid.Cid) (<-chan blocks.Block, error)
+	//调用路由层获取
+}
+
+// SessionExchange is an exchange.Interface which supports
+// sessions.
+type SessionExchange interface {
+	Interface
+	NewSession(context.Context) Interface
+}
+```
