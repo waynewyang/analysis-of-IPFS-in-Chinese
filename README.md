@@ -84,14 +84,14 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 - [回到目录](#目录)
 
 ### 协议总览
-- [x] [IPFS项目进度]
+- [x] [**IPFS项目进度**]
 	- [pm记录](https://github.com/ipfs/pm)
 	- ![](https://img.shields.io/badge/status-wip-orange.svg?style=flat-square) - 规范制定中，不成熟。
 	- ![](https://img.shields.io/badge/status-draft-yellow.svg?style=flat-square) - 草稿完成，很有可能做较大变更。
 	- ![](https://img.shields.io/badge/status-reliable-green.svg?style=flat-square) -接近稳定，只会做较小变更。
 	- ![](https://img.shields.io/badge/status-stable-brightgreen.svg?style=flat-square) - 规范稳定，本质不变，可能做小的改善。
 	- ![](https://img.shields.io/badge/status-permanent-blue.svg?style=flat-square) - 完全稳定，永久不变。
-- [x] [协议总览](https://github.com/ipfs/specs/tree/master/architecture)
+- [x] [**协议总览**](https://github.com/ipfs/specs/tree/master/architecture)
 	- MerkleDAG vs IP 瘦腰图
 		- ipfs通过MerkleDAG访问资源、http通过IP访问资源
 		- 向下提供支撑，向上提供应用
@@ -100,7 +100,7 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 
 ![](/doc/image/ip.waist.png)
 
-- [x] [国内研究参考]
+- [x] [**国内研究参考**]
 	- [x] 董天一团队
 		- [x] [mornmist team](https://github.com/mornmist/Newcomer-Guide)
 		- [x] [mornmist ipfs](https://github.com/mornmist/IPFS-For-Chinese)
@@ -110,11 +110,11 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 - [回到目录](#目录)
 
 ### 对外接口
-- [x] 参考
+- [x] **参考**
 	- [x] [参考](https://ipfs.docs.apiary.io)
 	- [x] [public-api](https://github.com/ipfs/specs/tree/master/public-api)
 	- [ ] [js  interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core)
-- [x] API笔记
+- [x] **API笔记**
 	- [x] [basic](/doc/api/basic.md)
 	- [x] [data structure](/doc/api/datastructure.md)
 	- [ ] [advance](/doc/api/adv.md)
@@ -140,21 +140,21 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 - [回到目录](#目录)
 
 ### 基础模块分析
-- [x] [multiformats](/doc/multiformat.md)
-- [x] 基于multiaddr的一些支撑包（网络层）
+- [x] [**multiformats**](/doc/multiformat.md)
+- [x] **基于multiaddr的一些支撑包（网络层）**
   - [x] [mafmt](/multiaddrs/mafmt)
   - [x] [addr-util](/multiaddrs/addr-util)
   - [x] [maddr-filter](/multiaddrs/maddr-filter)
   - [x] [multiaddr-filter](/multiaddrs/multiaddr-filter)
-- [x] [cid](/doc/cid.md)
-- [x] repo
+- [x] [**cid**](/doc/cid.md)
+- [x] **repo**
 	- [x] [参考 ](https://github.com/ipfs/specs/tree/master/repo) 
 		- 文档未更新 
 	- [x] [持久化数据分析](/datastores/README.md)
 		- [x] [笔记](datastores/note.md)
 		- [x] [示例](/datastores/example.md)
 	- [ ] [细节源码分析](/datastores/源码分析.md)
-- [ ] 其他
+- [ ] **其他**
 	- [ ] [protobuf](/protobuf)
 	- [ ] [semver](/semver)
 	- [ ] [IPFS数据导入导出/DEX](https://github.com/ipfs/specs/tree/master/dex)
@@ -171,26 +171,27 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 - [回到目录](#目录)
 
 ### 协议层分析
-- [x] [network](/network)
+- [x] [**network**](/network)
 	- [ ] [pnet](/go-libp2p-interface-pnet)
 	- [x] [relay](/doc/network.md)
 	- [ ] 穿透，待分析，目前端口转发OK，穿透比较差
-- [x] [routing](/routing)
+- [x] [**routing**](/routing)
 	- [x] [DHT寻址原理](/routing/dht.md)
 	- [x] [源码中修改K桶 a并发与k值提高效率](/routing/修改并发属.md)
-- [x] block exchange
+- [x] **block exchange**
 	- [x] [block](/ipld/block)
 	- [x] [笔记](/bitswap/bitswap)
-- [x] merkledag
+- [x] **merkledag**
 	- [x] DAG的相关的数据结构
 	> cid -> block -> node(dag)
+
 	> link -> node(dag)
 	- [x] [对上层接口 ipld-format](/ipld/ipld-format)
 	- [x] 具体实现分析笔记
 		- [x] [ipld-cbor](/ipld/ipld-cbor)
 		- [x] [go-merkledag](/ipld/go-merkledag)
 	- [x] [dag-link数目大小限制，为什么是最多174个](/ipld/dag-link数目大小限制)
-- [x] [namesys](/namesys)
+- [x] [**namesys**](/namesys)
 	- [x] [dns](/namesys/dns) 
 	- [x] [ipns](/namesys/ipns)
 
