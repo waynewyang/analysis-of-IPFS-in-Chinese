@@ -3,6 +3,7 @@
 ## 目录
 - IPFS协议总览
 	- [IPFS定义及参考技术](#ipfs定义及参考技术)
+	- [国内研究参考](#国内研究参考)
 	- [协议总览](#协议总览)
 	- [对外接口](#对外接口)
 - 基础
@@ -83,6 +84,15 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 
 - [回到目录](#目录)
 
+### 国内研究参考
+- [x] 董天一团队
+	- [x] [mornmist team](https://github.com/mornmist/Newcomer-Guide)
+	- [x] [mornmist ipfs](https://github.com/mornmist/IPFS-For-Chinese)
+	- [x] [《IPFS与区块链：原理与实践》 董天一书籍目录](http://www.ipfstalk.org/?t/197.html)
+- [x] [西二旗李老师-简书](https://www.jianshu.com/u/832753b872c5)
+
+- [回到目录](#目录)
+
 ### 协议总览
 - [x] [**IPFS项目进度**]
 	- [pm记录](https://github.com/ipfs/pm)
@@ -100,13 +110,6 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 
 ![](/doc/image/ip.waist.png)
 
-- [x] [**国内研究参考**]
-	- [x] 董天一团队
-		- [x] [mornmist team](https://github.com/mornmist/Newcomer-Guide)
-		- [x] [mornmist ipfs](https://github.com/mornmist/IPFS-For-Chinese)
-		- [x] [《IPFS与区块链：原理与实践》 董天一书籍目录](http://www.ipfstalk.org/?t/197.html)
-	- [x] [西二旗李老师-简书](https://www.jianshu.com/u/832753b872c5)
-
 - [回到目录](#目录)
 
 ### 对外接口
@@ -121,13 +124,6 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 	- [x] [network](/doc/api/net.md)
 	- [x] [tool](/doc/api/tool.md)
 	- [ ] [others](/doc/api/others.md) 
-
-- [回到目录](#目录)
-
-### libp2p接口使用
-- [ ] 转发使用
-	- [x] [命令](/doc/network.md)
-	- [ ] 编码
 
 - [回到目录](#目录)
 
@@ -158,15 +154,6 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 	- [ ] [protobuf](/protobuf)
 	- [ ] [semver](/semver)
 	- [ ] [IPFS数据导入导出/DEX](https://github.com/ipfs/specs/tree/master/dex)
-
-- [回到目录](#目录)
-
-### IPFS主流程概要分析
-- [ ] ipfs init
-- [ ] ipfs daemon
-- [ ] ipfs add
-- [ ] ipfs get
-- [ ] cancel
 
 - [回到目录](#目录)
 
@@ -213,6 +200,15 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 > ipfs log tail
 - [回到目录](#目录)
 
+### IPFS主流程概要分析
+- [ ] ipfs init
+- [ ] ipfs daemon
+- [ ] ipfs add
+- [ ] ipfs get
+- [ ] cancel
+
+- [回到目录](#目录)
+
 ### IPFS-Cluster
 - [x] 参考
   - [x] [源码](https://github.com/ipfs/ipfs-cluster)
@@ -225,8 +221,12 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 ### ipfs-companion
 - [网址](https://github.com/ipfs-shipyard/ipfs-companion)
 
+- [回到目录](#目录)
+
 ### ipfs-desktop
 - [网址](https://github.com/ipfs-shipyard/ipfs-desktop)
+
+- [回到目录](#目录)
 
 ### 协议当前对于我们来说存在的主要问题
 - 只能指定单目录存储，如果FILECOIN不做处理，硬盘的换盘会比较麻烦
