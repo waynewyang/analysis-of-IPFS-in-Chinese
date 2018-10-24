@@ -1,10 +1,77 @@
-## ipld-format
+## 对上层协议的接口
 
 ### 说明
 
 - format主要规范定义了IPLD的接口抽象层
-- 对DAG的批量管理，缓冲大小限制8M（8左移20位），节点数目限制128个
 - 对于不同格式的IPLD解析器，需要分别去实现。
+
+## 主要接口
+```
+// DAGService is an IPFS Merkle DAG service.
+type DAGService interface {
+	NodeGetter
+
+	// Add adds a node to this DAG.
+	Add(context.Context, Node) error
+
+	// Remove removes a node from this DAG.
+	//
+	// Remove returns no error if the requested node is not present in this DAG.
+	Remove(context.Context, *cid.Cid) error
+
+	// AddMany adds many nodes to this DAG.
+	//
+	// Consider using NewBatch instead of calling this directly if you need
+	// to add an unbounded number of nodes to avoid buffering too much.
+	AddMany(context.Context, []Node) error
+
+	// RemoveMany removes many nodes from this DAG.
+	//
+	// It returns success even if the nodes were not present in the DAG.
+	RemoveMany(context.Context, []*cid.Cid) error
+}
+```
+
+```
+// 所有的IPLD节点均需要实现Node接口
+type Node interface {
+	blocks.Block //block包含了cid与实际的数据
+	Resolver     
+
+	// ResolveLink is a helper function that calls resolve and asserts the
+	// output is a link
+	ResolveLink(path []string) (*Link, []string, error) //解析一个路径所包含的Link
+
+	//深拷贝一个IPLD节点
+	// Copy returns a deep copy of this node
+	Copy() Node
+
+	// 返回一个节点对象所有的Links
+	// Links is a helper function that returns all links within this object
+	Links() []*Link
+
+	//返回节点状态
+	// TODO: not sure if stat deserves to stay
+	Stat() (*NodeStat, error)
+
+	//返回对象的大小字节数
+	// Size returns the size in bytes of the serialized object
+	Size() (uint64, error)
+}
+
+// Link结构体，
+// Link represents an IPFS Merkle DAG Link between Nodes.
+type Link struct {
+	// utf string name. should be unique per object
+	Name string // utf8
+
+	// cumulative size of target object
+	Size uint64
+
+	// multihash of the target object
+	Cid *cid.Cid
+}
+```
 
 ### 源码分析
 

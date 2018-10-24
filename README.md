@@ -182,12 +182,14 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 	- [x] [block](/ipld/block)
 	- [x] [笔记](/bitswap/bitswap)
 - [x] merkledag
-	- [x] DAG数据结构
-		cid -> block -> node ->dag
-	- [x] [ipld-format](/ipld/ipld-format)
-	- [x] [ipld-cbor](/ipld/ipld-cbor)
-	- [x] [go-merkledag](/ipld/go-merkledag)
-	- [x] [dag-link数目大小限制](/ipld/dag-link数目大小限制)
+	- [x] DAG的相关的数据结构
+	> cid -> block -> node(dag)
+	> link -> node(dag)
+	- [x] [对上层接口 ipld-format](/ipld/ipld-format)
+	- [x] 具体实现分析笔记
+		- [x] [ipld-cbor](/ipld/ipld-cbor)
+		- [x] [go-merkledag](/ipld/go-merkledag)
+	- [x] [dag-link数目大小限制，为什么是最多174个](/ipld/dag-link数目大小限制)
 - [x] [namesys](/namesys)
 	- [x] [dns](/namesys/dns) 
 	- [x] [ipns](/namesys/ipns)
