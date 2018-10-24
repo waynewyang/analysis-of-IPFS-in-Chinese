@@ -166,7 +166,7 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 
 ### 协议层分析
 - [x] [network](/network)
-	- [x] [pnet](/go-libp2p-interface-pnet)
+	- [ ] [pnet](/go-libp2p-interface-pnet)
 	- [x] [relay](/doc/network.md)
 	- [ ] 穿透，待分析，目前端口转发OK，穿透比较差
 - [x] [routing](/routing)
