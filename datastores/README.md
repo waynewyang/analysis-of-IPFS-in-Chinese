@@ -1,13 +1,13 @@
-# datastore
+# 持久化数据分析
 问题
 
-## 原始块block存储
+## 原始块block存储（blocks目录）
 
 - 路径 /path/to/ipfsrepo/blocks
 1. linux默认路径~/.ipfs/blocks
 2. blocks存储什么？
 
-## 键值存储
+## 键值存储（datastore目录）
 
 - 存储的具体内容？
 

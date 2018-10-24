@@ -1,8 +1,7 @@
 # CID
 - 参考网址[github](https://github.com/ipld/cid)
 ## 概念
-- 自描述的
-- ipfs id 与 dag对象均为cid格式
+- 自描述格式，peers ID就是一个cid，DAG就是由cid与data、link组成
 - 用于内容寻址
 
 ## CIDV0

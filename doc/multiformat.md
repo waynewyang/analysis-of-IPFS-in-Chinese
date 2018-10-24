@@ -1,8 +1,11 @@
 # multiformat
 
+- **目的**
+> 提升协议的灵活性、兼容性
+> 用固定的格式来表达不同的对象
+
 - **特点**
 >多格式项目是一系列协议，旨在面向未来的系统。这样做主要是通过自我描述来增强格式值。这允许互操作性，协议敏捷性
->用固定的格式来表达不同的对象
 
 - **Self-description**
 >自描述的，数据本身和它的价值评估策略必须区分开来，数据本身必须是自描述的，除了安全上的考虑，数据本身不能强加任何限制策略。只有这样，整个数据存储架构才能适应多方面的需求。
@@ -15,12 +18,12 @@
 
 |multiformat类型| 解释 | code |举例|
 |:-------:|:-------:|:-------:|:-------:|
-|multibase |编解码| [multibase.csv](https://github.com/multiformats/multibase/blob/master/multibase.csv )|在CID v1中，multibase是最外层的编码，默认为z，base58btc |
-|multicodec | 数据格式|[multicodec.csv](https://github.com/multiformats/multicodec/blob/master/table.csv)  |在CID v1中，multicodec默认为0x55，raw类型|
-|multihash | 哈希方法| [multihash.csv](https://github.com/multiformats/multihash/blob/master/hashtable.csv) |cid中默认的哈希方法，代码0x12，sha2-256|
+|multibase |编解码,长度统一简短| [multibase.csv](https://github.com/multiformats/multibase/blob/master/multibase.csv )|在CID v1中，multibase是最外层的编码，默认为z，base58btc |
+|multicodec | 数据格式编码，压缩|[multicodec.csv](https://github.com/multiformats/multicodec/blob/master/table.csv)  |在CID v1中，multicodec默认为0x55，raw类型|
+|multihash | 哈希方法，通过以上三个自描述功能，满足cid的多样性需求| [multihash.csv](https://github.com/multiformats/multihash/blob/master/hashtable.csv) |cid中默认的哈希方法，代码0x12，sha2-256|
 |multiaddr |将表达网络地址的域名、ip、端口、协议编号等全部统一格式、路径（比如http/s）| 见下面表格|ipfs 网络使用的均为multiaddr|
 |multiaddr-dns |解析 /dns4, /dns6, and /dnsaddr multiaddrs. |  NA|见下表|
-|multiaddr-net |在标准net库基础上基于multiaddr封装一层接口 | NA ||
+|multiaddr-net |在标准net库基础上基于multiaddr封装一层接口，使得可以使用multaddr进行网络操作 | NA ||
 |multistream |一个conn对应一个stream，在连接之上封装 |  string类型|[使用示例](/multistream)|
 |~~multigram~~||||
 
