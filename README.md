@@ -1,4 +1,4 @@
-# IPFS分析笔记
+# IPFS分析笔记——Wayne
 ## 目录
 - IPFS协议总览
 	- [IPFS定义及参考技术](#ipfs定义及参考技术)
@@ -7,9 +7,9 @@
 - 基础
 	- [语言基础](#语言基础)
 	- [基础模块分析](#基础模块分析)
-		- [multiformat](#multiformat)
-		- [cid](#cid)
-		- [repo—看看IPFS持久化的数据是什么样的](#multiformat)
+		- multiformat
+		- cid
+		- repo—看看IPFS持久化的数据是什么样的
 - IPFS协议分析
 	- [协议层分析](#协议层分析)
 	- [IPFS应用层数据结构](#应用层数据结构)
