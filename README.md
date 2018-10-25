@@ -5,7 +5,6 @@
 	- [IPFS定义及参考技术](#ipfs定义及参考技术)
 	- [国内研究参考](#国内研究参考)
 	- [协议总览](#协议总览)
-	- [对外接口](#对外接口)
 - 基础
 	- [语言基础](#语言基础)
 	- [基础模块分析](#基础模块分析)
@@ -14,15 +13,12 @@
 		- repo—看看IPFS持久化的数据是什么样的
 - IPFS协议分析
 	- [协议层分析](#协议层分析)
-		- network
-		- routing
-		- exchange
-		- merkledag
-		- naming
+		- network, routing, exchange, merkledag, naming
 	- [IPFS应用层数据结构](#应用层数据结构)
 		- unixfs
 	- [debug方法](#协议debug方法)
-- IPFS主要API逻辑分析
+- IPFS API
+	- [对外接口](#对外接口)
 	- [IPFS主要API概要分析](#ipfs主流程概要分析)
 		- init、daemon、add、get、cancel
 - 应用
@@ -34,6 +30,7 @@
 	- 先河IPFS应用
 		- [协议当前对于我们来说存在的主要问题](#协议当前对于我们来说存在的主要问题)
 		- [我们的应用规划](#我们的应用规划)
+- [后续安排计划](#后续安排计划)
 
 ### IPFS定义及参考技术
 - 定义
@@ -112,25 +109,9 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 
 - [回到目录](#目录)
 
-### 对外接口
-- [x] **参考**
-	- [x] [参考](https://ipfs.docs.apiary.io)
-	- [x] [public-api](https://github.com/ipfs/specs/tree/master/public-api)
-	- [ ] [js  interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core)
-- [x] **API笔记**
-	- [x] [basic](/doc/api/basic.md)
-	- [x] [data structure](/doc/api/datastructure.md)
-	- [ ] [advance](/doc/api/adv.md)
-	- [x] [network](/doc/api/net.md)
-	- [x] [tool](/doc/api/tool.md)
-	- [ ] [others](/doc/api/others.md) 
-
-- [回到目录](#目录)
-
 ### 语言基础
 - [x] [go依赖包编译注意](/doc/compile.md)
 - [x] [context用法](/go-basic/context)
-- [x] [空struct用法](/go-basic/nullstruct)
 - [x] [interface理解](/go-basic/interface)
 
 - [回到目录](#目录)
@@ -200,6 +181,21 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 > ipfs log tail
 - [回到目录](#目录)
 
+### 对外接口
+- [x] **参考**
+	- [x] [参考](https://ipfs.docs.apiary.io)
+	- [x] [public-api](https://github.com/ipfs/specs/tree/master/public-api)
+	- [ ] [js  interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core)
+- [x] **API笔记**
+	- [x] [basic](/doc/api/basic.md)
+	- [x] [data structure](/doc/api/datastructure.md)
+	- [ ] [advance](/doc/api/adv.md)
+	- [x] [network](/doc/api/net.md)
+	- [x] [tool](/doc/api/tool.md)
+	- [ ] [others](/doc/api/others.md) 
+
+- [回到目录](#目录)
+
 ### [IPFS主流程概要分析](/主要api流程概要分析)
 
 - [回到目录](#目录)
@@ -225,15 +221,41 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 
 ### 协议当前对于我们来说存在的主要问题
 - 只能指定单目录存储，如果FILECOIN不做处理，硬盘的换盘会比较麻烦
+> 系统之上，多用户多ipfs daemon，每个对应一个硬盘（依赖于一个filecoion用户应该对应多个ipfs节点）
+> 修改协议，repo中block存储逻辑存储，有工作量
+
+- 基于上述问题对filecoin的大容量存储测试考虑，可能情况
+> 一个filecoion用户应该对应多个ipfs节点，ipfs节点并非区块链节点
+> 所以大容量测试，可能并非需要用其他的集群技术去集中硬盘空间
+
 - libP2P穿透差
+> 保证我们的转发OK，协议层投入进行开发的必要性
 
 - [回到目录](#目录)
 
 ### 我们的应用规划
-- [ ] 先河IPFS网盘
-- [ ] 同步盘
-- [ ] 共享圈
-- [ ] 分布式鉴权云存储
-- [ ] 分布式聊天
+- 共享圈
+![](/共享圈.jpg)
+
+- 先河IPFS网盘
+> Hugo另行分享
+
+- 同步盘
+> 思路：基于ipfs-cluster是否可行
+
+- 分布式鉴权
+	- 利用路由层提供的DHT 键值存储进行设计
+	
+- 分布式聊天
+	- 使用js-ipfs，依赖其成熟度
+	- 依赖分布式鉴权
+
+- [回到目录](#目录)
+
+### 后续安排计划
+- 分享libp2p、先河网盘及api使用
+- 第一阶段人员投入安排
+	- 有输入、有输出
+- 应用方案的进一步讨论落地
 
 - [回到目录](#目录)
