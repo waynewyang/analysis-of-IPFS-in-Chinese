@@ -26,7 +26,7 @@
 		- [IPFS-Cluster](#ipfs-cluster)
 		- [ipfs-companion](#ipfs-companion)
 		- [ipfs-desktop](#ipfs-desktop)
-	- 第三方应用
+	- [第三方应用](#第三方应用)
 	- 先河IPFS应用
 		- [协议当前对于我们来说存在的主要问题](#协议当前对于我们来说存在的主要问题)
 		- [我们的应用规划](#我们的应用规划)
@@ -216,6 +216,27 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 
 ### ipfs-desktop
 - [网址](https://github.com/ipfs-shipyard/ipfs-desktop)
+
+- [回到目录](#目录)
+
+## 第三方应用
+- [DTube - 分散式视频平台](https://d.tube/)
+- [Decentraland的JanusVR查看器（来自ipfs的内容）](https://www.youtube.com/watch?v=841vXBopH68)
+- [Textile Photos - 用于照片的数字钱包，端到端加密](https://www.textile.photos/)
+- [Paratii - 分布式策展协议和流媒体引擎](Paratii - 分布式策展协议和流媒体引擎)
+- [Peergos - 端到端加密，p2p文件存储和共享](https://peergos.org/)
+- [更多收录的应用](https://awesome.ipfs.io/categories/apps/)
+
+- 文章
+	- [文章：纺织：将下一百万同行加入IPFS](https://medium.com/textileio/adding-the-next-million-peers-to-ipfs-76d356352d14)
+	- [文章：未来开源的分散代码分发](https://medium.com/textileio/decentralized-code-distribution-for-the-future-of-open-source-2dc58f1153b2)
+	- [文章：阿卡莎：修补差距](https://blog.akasha.world/2018/04/18/akasha-web-mend-the-gap/)
+	- [Talk：真正无服务器，CRDT和IPFS（scalarconf）](https://www.youtube.com/watch?v=EscG2aytq10)
+	- [会谈：DFS峰会上的IPFS闪电会谈](https://decentralizedweb.net/videos/talks-ipfs-lightning-talks/)
+	- [教程：从头开始构建行星际ĐApp](https://medium.com/textileio/building-an-interplanetary-%C4%91app-from-scratch-51f9b8be5a74)
+	- [教程：EC2的IPFS集群对等安装程序](https://medium.com/textileio/ipfs-cluster-peer-installer-for-ec2-ef2e4bfb1a74)
+	- [教程：在Go中编写一个简单的P2P区块链](https://medium.com/@mycoralhealth/code-a-simple-p2p-blockchain-in-go-46662601f417)
+	- [教程：从零到行星际英雄（基于浏览器的ĐApps与IPFS）](https://medium.freecodecamp.org/from-zero-to-interplanetary-hero-7e62f7d4427)
 
 - [回到目录](#目录)
 
