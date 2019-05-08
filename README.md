@@ -1,4 +1,8 @@
 # IPFS分析笔记——Wayne
+
+> 作者：先河系统杨尉(waynewyang),转载请注明出处
+
+
 ![](/study.png) 
 ## 目录
 - IPFS协议总览
