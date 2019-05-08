@@ -3,7 +3,6 @@
 ## 目录
 - IPFS协议总览
 	- [IPFS定义及参考技术](#ipfs定义及参考技术)
-	- [国内研究参考](#国内研究参考)
 	- [协议总览](#协议总览)
 - 基础
 	- [语言基础](#语言基础)
@@ -27,10 +26,6 @@
 		- [ipfs-companion](#ipfs-companion)
 		- [ipfs-desktop](#ipfs-desktop)
 	- [第三方应用](#第三方应用)
-	- 先河IPFS应用
-		- [协议当前对于我们来说存在的主要问题](#协议当前对于我们来说存在的主要问题)
-		- [我们的应用规划](#我们的应用规划)
-- [后续安排计划](#后续安排计划)
 
 ### IPFS定义及参考技术
 - 定义
@@ -78,15 +73,6 @@ IPNS mounted at: /ipns
 wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 "This is new another file" 
 ```
-
-- [回到目录](#目录)
-
-### 国内研究参考
-- [x] 董天一团队
-	- [x] [mornmist team](https://github.com/mornmist/Newcomer-Guide)
-	- [x] [mornmist ipfs](https://github.com/mornmist/IPFS-For-Chinese)
-	- [x] [《IPFS与区块链：原理与实践》 董天一书籍目录](http://www.ipfstalk.org/?t/197.html)
-- [x] [西二旗李老师-简书](https://www.jianshu.com/u/832753b872c5)
 
 - [回到目录](#目录)
 
@@ -237,46 +223,5 @@ wayne@wayne:~/go/src$ cat /ipfs/QmamQ2prV7FTfFm1eJc5o6QRA2BAkUJAbc5JCrLpu9dY2z
 	- [教程：EC2的IPFS集群对等安装程序](https://medium.com/textileio/ipfs-cluster-peer-installer-for-ec2-ef2e4bfb1a74)
 	- [教程：在Go中编写一个简单的P2P区块链](https://medium.com/@mycoralhealth/code-a-simple-p2p-blockchain-in-go-46662601f417)
 	- [教程：从零到行星际英雄（基于浏览器的ĐApps与IPFS）](https://medium.freecodecamp.org/from-zero-to-interplanetary-hero-7e62f7d4427)
-
-- [回到目录](#目录)
-
-### 协议当前对于我们来说存在的主要问题
-- 只能指定单目录存储，如果FILECOIN不做处理，硬盘的换盘会比较麻烦
-> 系统之上，多用户多ipfs daemon，每个对应一个硬盘（依赖于一个filecoion用户应该对应多个ipfs节点）
-> 修改协议，repo中block存储逻辑存储，有工作量
-
-- 基于上述问题对filecoin的大容量存储测试考虑，可能情况
-> 一个filecoion用户应该对应多个ipfs节点，ipfs节点并非区块链节点
-> 所以大容量测试，可能并非需要用其他的集群技术去集中硬盘空间
-
-- libP2P穿透差
-> 保证我们的转发OK，协议层投入进行开发的必要性
-
-- [回到目录](#目录)
-
-### 我们的应用规划
-- 共享圈
-![](/共享圈.jpg)
-
-- 先河IPFS网盘
-> Hugo另行分享
-
-- 同步盘
-> 思路：基于ipfs-cluster是否可行
-
-- 分布式鉴权
-	- 利用路由层提供的DHT 键值存储进行设计
-	
-- 分布式聊天
-	- 使用js-ipfs，依赖其成熟度
-	- 依赖分布式鉴权
-
-- [回到目录](#目录)
-
-### 后续安排计划
-- 分享libp2p、先河网盘及api使用
-- 第一阶段人员投入安排
-	- 有输入、有输出
-- 应用方案的进一步讨论落地
 
 - [回到目录](#目录)
